@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['avaa.org'],
+  },
 }
 
 module.exports = nextConfig
