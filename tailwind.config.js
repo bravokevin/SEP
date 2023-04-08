@@ -26,7 +26,9 @@ module.exports = {
         "glowing": "glowing 20s linear infinite"
       },
       plugins: [],
-    }
+    },
+    // colors:{
 
+    // }
   }
 }

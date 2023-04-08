@@ -6,7 +6,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] })
 
 const PublicFooter = () => {
     return (
-        <footer className={`bg-[#061304] py-4 ${roboto.className} text-xs lg:text-sm `}>
+        <footer className={` py-4 ${roboto.className} text-xs lg:text-sm bg-gradient-to-b dark:to-emerald-900 dark:from-slate-950`}>
             <div className="max-w-xs lg:max-w-7xl box-border relative justify-center items-center m-auto flex-wrap ">
                 <div className="flex m-auto lg:mx-24 justify-center lg:justify-start mb-8 lg:mb-2">
                     <figure>
@@ -45,10 +45,10 @@ const PublicFooter = () => {
                         <p>Programa certificado oficialmente por:</p>
                         <div className="flex flex-wrap gap-4">
                             <figure>
-                                <Image src='https://avaa.org/wp-content/uploads/2020/10/logoiesanuevo-1-150x150.png' alt='IESA Logo' width={60} height={60} />
+                                {/* <Image src='https://avaa.org/wp-content/uploads/2020/10/logoiesanuevo-1-150x150.png' alt='IESA Logo' width={60} height={60} /> */}
                             </figure>
                             <figure>
-                                <Image src='https://avaa.org/wp-content/uploads/2020/07/logoUNIVERSIDADCARABOBO-143x150.png' alt='Universidad de Carabobo Logo' width={80} height={80} />
+                                {/* <Image src='https://avaa.org/wp-content/uploads/2020/07/logoUNIVERSIDADCARABOBO-143x150.png' alt='Universidad de Carabobo Logo' width={80} height={80} /> */}
                             </figure>
                         </div>
                     </div>
