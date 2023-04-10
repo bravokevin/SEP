@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import './globals.css'
 import PublicFooter from '@/components/footer/Public';
 
@@ -13,6 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <Head>
+        <link rel="icon" type="image/png" href='/logo-proexcelencia-cap.png' />
+      </Head>
       <body>
         {children}
         <PublicFooter />

@@ -6,7 +6,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] })
 
 const PublicFooter = () => {
     return (
-        <footer className={` py-4 ${roboto.className} text-xs lg:text-sm bg-gradient-to-b dark:to-emerald-900 dark:from-slate-950`}>
+        <footer className={` py-4 ${roboto.className} text-xs md:text-sm slate-950`}>
             <div className="max-w-xs lg:max-w-7xl box-border relative justify-center items-center m-auto flex-wrap ">
                 <div className="flex m-auto lg:mx-24 justify-center lg:justify-start mb-8 lg:mb-2">
                     <figure>
@@ -37,7 +37,7 @@ const PublicFooter = () => {
                                 </svg>
                             </a>
                             <a href="https://www.facebook.com/avaa.org" target="_blank" rel="noreferrer">
-                                <svg viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" className="inline-block h-4 lg:h-6 fa-instagram text-white" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#ffffff]"> </path> </g> </g> </g> </g></svg>
+                                <svg viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" className="inline-block h-4 lg:h-6 fa-instagram text-white" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fillRule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#ffffff]"> </path> </g> </g> </g> </g></svg>
                             </a>
                         </div>
                     </div>
@@ -45,10 +45,10 @@ const PublicFooter = () => {
                         <p>Programa certificado oficialmente por:</p>
                         <div className="flex flex-wrap gap-4">
                             <figure>
-                                {/* <Image src='https://avaa.org/wp-content/uploads/2020/10/logoiesanuevo-1-150x150.png' alt='IESA Logo' width={60} height={60} /> */}
+                                <Image src='https://avaa.org/wp-content/uploads/2020/10/logoiesanuevo-1-150x150.png' alt='IESA Logo' width={60} height={60} />
                             </figure>
                             <figure>
-                                {/* <Image src='https://avaa.org/wp-content/uploads/2020/07/logoUNIVERSIDADCARABOBO-143x150.png' alt='Universidad de Carabobo Logo' width={80} height={80} /> */}
+                                <Image src='https://avaa.org/wp-content/uploads/2020/07/logoUNIVERSIDADCARABOBO-143x150.png' alt='Universidad de Carabobo Logo' width={80} height={80} />
                             </figure>
                         </div>
                     </div>

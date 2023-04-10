@@ -1,89 +1,70 @@
+import Image from 'next/image'
 import React from 'react'
-import "./register.css";
-import Image from 'next/image';
 
 const page = () => {
     return (
-        <main className="flex flex-col md:flex-row-reverse md:h-screen">
-            <section className="flex items-start w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
-                <div className="flex flex-row items-center w-full max-w-sm py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-2.5 pt-4 md:py-4 transform origin-left bg-primary text-primary">
-                    <div className="logo-animated flex items-center space-x-1">
+        <main className="flex flex-col md:flex-row-reverse md:h-screen bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950">
+            <section className="flex items-center  w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
+                <div className="flex flex-col items-center w-full max-w-sm py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-2.5 pt-4 md:py-4 transform origin-left md:gap-44">
+                    <hr className="hidden md:block w-full h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36 " />
+                    <div className="flex items-center space-x-1 -translate-x-10 relative dark:drop-shadow-[0_0_1rem_#279902]">
+                        <Image src='/logo-proexcelencia-cap.png' alt='Proexcelencia Logo' width={80} height={80}></Image>
+                        <Image src='/logo-proexcelencia-words.png' alt='Proexcelencia Logo' width={200} height={100} className='animate-pulse'></Image>
                     </div>
-                    <Image
-                        className="relative dark:drop-shadow-[0_0_1rem_#279902]"
-                        src="/proexcelencia.png"
-                        alt="Logo Proexcelencia"
-                        width={250}
-                        height={50}
-                        priority
-                    />
+                    <hr className="hidden w-full overflow-hidden -z-10 md:block  h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36" />
                 </div>
             </section>
-
-            <section className="justify-center px-4 md:px-0 md:flex md:w-2/3 md:border-r">
+            <section className="justify-center px-4 md:px-0 md:flex md:w-2/3">
                 <div className="w-full max-w-sm py-4 mx-auto my-auto min-w-min md:py-9 md:w-7/12">
-
                     <h2 className="text-xl font-semibold md:text-2xl">Registrate</h2>
-                    <p className="text-secondary">Ya tienes una cuenta?
-                        <a className="font-medium" href="/auth/login">Entra</a>.
+                    <p className="text-xs md:text-sm text-slate-400">¿Ya tienes una cuenta? {' '}
+                        <a className="text-green-600 text-xs md:text-sm font-semibold" href="/auth/login">Entra.</a>
                     </p>
-
                     <div className="my-4">
-                        <form className="new_user" id="new_user" action="/sign-up" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="igtv8lbcdGu0AVlQYu_0BNU3ZbxgUZ8lilwW7wr5gYT5c-nxV9pq5Pa4rx1wbHyflMSWqq3Yo-vNKNz0gCUvuA" autoComplete="off" />
-                            <div className="mb-3">
-                                <label htmlFor="user_email">Email</label>
-                                <input autoFocus={true} autoComplete="email" required={true} type="email" value="" name="user[email]" id="user_email" />
+                        <form className="new_user" id="new_user" action="/register" acceptCharset="UTF-8" method="post">
+                            <input type="hidden" name="authenticity_token" value="W2UJYFiq_3As3omwiyfdMIYlpgTavuR8vcsjIFUhbAVcxRm9egyIbaOvUm75Vz2VXzD8ClWfkmxxsEwy7tYvmQ" autoComplete="off" />
+                            <div className="mb-3 flex flex-col gap-2">
+                                <label htmlFor="user_email" className='text-sm text-slate-400'>Correo electronico</label>
+                                <input className='focus:outline-none  focus:outline-offset-0 py-1 px-3 rounded-md w-full bg-emerald-950  ring-1 ring-emerald-900 active:border-zinc-950 focus:outline-emerald-600 ' autoFocus={true} autoComplete="email" required={true} type="email" name="user[email]" id="user_email" />
                             </div>
-
-                            <div className="mb-3">
-                                {/*  <auto-check csrf="50j38ClGrnTOv2XT0XOsNXXdwWxMworsk-_3p7Gdr_guqqjiXTRoTz51-38xQCKjvTjqbSYXYqrG7-wtjMO2XQ" src="/users/password-strength" required=""> */}
-                                <div className="flex items-center justify-between leading-none mb-1.5">
-                                    <label className="mb-0" htmlFor="user_password">Contrasena</label>
-                                    <div className="js-password-strength-container" aria-live="polite"></div>
-                                </div>
-                                <input className="js-password-strength" autoComplete="off" required={true} type="password" name="user[password]" id="user_password" spellCheck="false" />
-                                {/* // </auto-check> */}
+                            <div className="mb-3 flex flex-col gap-2">
+                                <label htmlFor="user_password" className='text-sm text-slate-400'>Contrasena</label>
+                                <input autoComplete="current-password" className='focus:outline-none focus:outline-offset-0  focus:outline-emerald-600  py-1 px-3 rounded-md w-full bg-emerald-950 ring-1 ring-emerald-900 border-emerald-700' required={true} type="password" name="user[password]" id="user_password" />
                             </div>
-
-                            <div className="mb-4">
-                                <label htmlFor="user_password_confirmation">Confirma la contrasena</label>
-                                <input autoComplete="new-password" required={true} type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+                            <div className="mb-3 flex flex-col gap-2">
+                                <label htmlFor="user_password" className='text-sm text-slate-400'>Confirmar contrasena</label>
+                                <input autoComplete="current-password" className='focus:outline-none focus:outline-offset-0  focus:outline-emerald-600  py-1 px-3 rounded-md w-full bg-emerald-950 ring-1 ring-emerald-900 border-emerald-700' required={true} type="password" name="user[password]" id="user_password" />
                             </div>
-
-                            <p className="mb-3 text-sm text-secondary">
-                                By registering, you agree to the processing of your personal data by
-                                PlanetScale as described in the <a href="https://planetscale.com/legal/privacy" target="_blank">Privacy Policy</a>.
+                            <p className="mb-3 text-xs text-slate-400 ">
+                                Al registrarse, acepta el procesamiento de sus datos personales por ProExcelencia como se describe en las <a href="https://planetscale.com/legal/privacy" target="_blank" className='text-green-500 hover:font-semibold' >Politica de Privacidad.</a>
                             </p>
-
-                            <div className="flex items-center mb-4">
-                                <input className="mr-1" type="checkbox" value="1" name="tos" id="tos" required={true} />
-                                <label className="mb-0 font-normal" htmlFor="tos">Acepto los <a href="https://planetscale.com/legal/agreement" target="_blank">Terminos y condiciones del servicio</a></label>
+                            <div className="flex items-center mb-4 gap-2">
+                                <input className="w-4 h-4 text-blue-600 bg-slate-400 rounded focus:ring-blue-500 dark:focus:ring-blue-600" type="checkbox" required={true} />
+                                <label className="mb-0 font-normal text-xs" htmlFor="tos">He leido y acepto los{" "}<a href="https://planetscale.com/legal/agreement" target="_blank" className='text-green-500 hover:font-semibold' >Terminos del servicio.</a></label>
                             </div>
-
-                            <div className="flex justify-between">
-                                <button name="button" type="submit" className="btn btn-primary w-full">Registrarse</button>
-                            </div>
+                            <button name="button" type="submit" className="bg-emerald-950 hover:bg-green-600 hover:border-green-600 font-semibold box-border border-emerald-900 border-2 py-1 px-4 w-full rounded-md">Registrate</button>
                         </form>
                     </div>
-                    <div className="flex flex-col mb-3">
-                        <hr className="h-0 border-t mt-sm" />
-                        <div className="-mt-1 text-sm text-center">
-                            <span className="px-2 bg-primary text-secondary">O</span>
-                        </div>
+                    <div className="inline-flex items-center justify-around w-full ">
+                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-40" />
+                        <span className="absolute px-3 font-medium text-gray-900  dark:text-white ">o</span>
+                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-40" />
                     </div>
-                    <form action="/auth/github" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="zpbU513RTgAhUFK19CAoYvisCzS-scaJ1m7mppY0jpcvE8AI1eTmHnnMwjkYDY9RuHqZHKjqeeP12wM0dxIfpg" autoComplete="off" />
-                        <button type="submit" className="w-full btn btn-secondary">
-                            <svg width="32" height="20px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C24.2763 30.1077 27.0363 28.0664 28.9917 25.3432C30.947 22.6201 31.9991 19.3524 32 16C32 7.16 24.84 0 16 0Z" fill="currentColor"></path>
-                            </svg>
-                            Registrate con Gmail
-                        </button>
-                    </form>
+                    <div className="flex">
+                        <form className="mb-4 w-full" action="/auth/github" acceptCharset="UTF-8" method="post">
+                            <input type="hidden" name="authenticity_token" value="z8GHZkhNn_387JbUiiSgXktaglFCk63hEQOrJfSHJR8uRJOJwHg346RwBlhmCQdtC4wQeVTIEosytk63FaG0Lg" autoComplete="off" />
+                            <button
+                                className="bg-green-600 hover:bg-emerald-950 border-2 border-emerald-950 hover:border-green-600 text-white font-semibold py-2 px-4 rounded-md w-full flex justify-center gap-4"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512" fill="#000000" width={25}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#ffffff"></rect><path d="M158 391v-142l-82-63V361q0 30 30 30" fill="#4285f4"></path><path d="M 154 248l102 77l102-77v-98l-102 77l-102-77" fill="#ea4335"></path><path d="M354 391v-142l82-63V361q0 30-30 30" fill="#34a853"></path><path d="M76 188l82 63v-98l-30-23c-27-21-52 0-52 26" fill="#c5221f"></path><path d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26" fill="#fbbc04"></path></g></svg>
+                                Registrate con google
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </section>
-        </main>
+            </section >
+        </main >
     )
 }
 
 export default page
-

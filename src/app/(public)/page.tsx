@@ -6,9 +6,9 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-16 lg:p-24 gap-16 bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950">
+    <main className="flex min-h-screen flex-col items-center justify-between p-16 lg:p-24 gap-16 ">
       <div className="z-10 w-full max-w-5xl items-center justify-left font-mono text-sm ">
-        <div className="bottom-0 left-0 flex h-48 w-full items-end justify-center lg:justify-end bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+        <div className="bottom-0 left-0 flex h-48 w-full items-end justify-center lg:justify-end lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://www.avaa.org"
@@ -29,7 +29,7 @@ export default function Home() {
 
       <div className="relative flex place-items-center">
         <Image
-          className="relative dark:drop-shadow-[0_0_1rem_#279902]"
+          className="relative dark:drop-shadow-[0_0_1rem_#279902] animate-pulse"
           src="/proexcelencia.png"
           alt="Logo Proexcelencia"
           width={380}
