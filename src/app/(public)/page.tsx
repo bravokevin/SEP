@@ -47,8 +47,8 @@ export default function Home() {
           <h2 className={`${roboto.className} mb-3 text-2xl font-semibold`}>
             Registrate{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              <svg fill="none" stroke="currentColor" stroke-width="1.5" width="50" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+              <svg fill="none" stroke="currentColor" strokeWidth="1.5" width="50" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path strokeLinecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
               </svg>
             </span>
           </h2>
@@ -67,8 +67,8 @@ export default function Home() {
           <h2 className={`${roboto.className} mb-3 text-2xl font-semibold`}>
             Inicia Sesion{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              <svg fill="none" stroke="currentColor" stroke-width="1.5" width="50" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+              <svg fill="none" stroke="currentColor" strokeWidth="1.5" width="50" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path strokeLinecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
               </svg>
             </span>
           </h2>
