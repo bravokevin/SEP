@@ -1,15 +1,19 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { useAtom } from 'jotai'
 
 import logo from '@/../public/proexcelencia.png'
 import { SIDEBAR_ACTIVITIES_ACTIONS } from '../data'
 import DropdownButton from '../DropdownButton'
 import SidebarSeparator from './SidebarSeparator'
-// ${isOpen ? "" : "hidden"} 
+import { sidebarAtom } from '@/state/mainState'
+// 
 const Sidebar = () => {
+    const [isOpen,] = useAtom(sidebarAtom)
     return (
-        <aside className={`flex flex-col gap-4 justify-start items-center w-72 bg-white py-8 px-2 bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950 `}>
+        <aside className={`${isOpen ? "flex" : "hidden"} flex-col gap-4 justify-start items-center w-72 bg-white py-8 px-2 bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950 `}>
             <div className='flex items-center mb-2'>
                 <Link href="/dashboard" >
                     <Image src={logo} width={180} alt="Logo Proexcelencia" />
