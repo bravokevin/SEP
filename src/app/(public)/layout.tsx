@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import '@/app/globals.css'
 import PublicFooter from '@/components/footer/Public';
 import favicon from '@/../public/logo-proexcelencia-cap.png';
@@ -16,8 +15,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <Head>
-      </Head>
       <body>
         {children}
         <PublicFooter />
