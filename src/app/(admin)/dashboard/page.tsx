@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <h1 className="text-emerald-950 text-3xl font-bold">Panel general</h1>
+        <div></div>
         /* 
                  <div className="flex gap-4 pb-2 items-center h-48">
                 <div className="w-[56rem] flex gap-4 justify-start">
