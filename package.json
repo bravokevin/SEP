@@ -1,13 +1,13 @@
 {
   "name": "Sistema de Evaluacion del Becario (SEB)",
   "author": "Kevin Bravo (@_bravok)",
-  "description":"Sistema para evaluar el progreso del becario durante su estadia en el Programa Excelencia",
+  "description": "Sistema para evaluar el progreso del becario durante su estadia en el Programa Excelencia",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://github.com/mustafinho/seb",
-  "engines":{
-    "node":">=19.6.0",
-    "pnpm":">=7.27.0",
+  "engines": {
+    "node": ">=19.6.0",
+    "pnpm": ">=7.27.0",
     "npm": "please-use-pnpm"
   },
   "scripts": {
@@ -17,6 +17,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googleapis/calendar": "^4.1.0",
+    "@googleapis/drive": "^5.0.2",
+    "@googleapis/gmail": "^1.2.0",
+    "@googleapis/oauth2": "^1.0.0",
+    "@googleapis/people": "^3.0.2",
+    "@googleapis/sheets": "^4.0.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
