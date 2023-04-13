@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <main className='flex md:h-screen bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950 '>
           <Sidebar />
-          <section className='flex z-10 rounded-2xl bg-white dark:bg-emerald-700 2-full p-2 m-2 md:w-screen'>
+          <section className='flex flex-col z-10 rounded-2xl bg-white dark:bg-slate-950 p-4 m-3 md:w-screen'>
             <Navbar />
             {children}
           </section>

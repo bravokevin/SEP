@@ -2,7 +2,12 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div></div>
+        <div className='flex flex-row md:flex-col gap-4 h-full w-full'>
+            <div className="flex gap-4 items-center h-1/4 bg-white">
+                <h1>dasfsd</h1>
+            </div>
+
+        </div>
         /* 
                  <div className="flex gap-4 pb-2 items-center h-48">
                 <div className="w-[56rem] flex gap-4 justify-start">

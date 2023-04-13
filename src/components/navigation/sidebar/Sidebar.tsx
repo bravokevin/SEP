@@ -30,7 +30,11 @@ const Sidebar = () => {
                     )
                 })}
             </div>
+            <SidebarSeparator text='Mentoria' />
             <SidebarSeparator text='Controles de administrador' />
+            <SidebarSeparator text='Captacion' />
+            <SidebarSeparator text='Red de egresados' />
+
             {/* 
                 <ul className=" space-y-2 ">
                     {SIDEBAR_DATABSE_ELEMENTS.map(({ buttonName, icon, itemList }) => {
