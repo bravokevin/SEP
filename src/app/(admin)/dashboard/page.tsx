@@ -1,12 +1,48 @@
+import Card from '@/components/dashboard/Card'
 import React from 'react'
+import { workshopIcon } from '@/assets/svgs'
+const CARD_CONTENT = [
+    {
+        icon: workshopIcon,
+        text: "Talleres realizados",
+        number: "15",
+        bg: "bg-gradient-to-r from-blue-700  to-indigo-900",
+        cardButtonBg: "bg-indigo-950 active:bg-blue-700"
+    },
+    {
+        icon: workshopIcon,
+        text: "Chats Realizados",
+        number: "20",
+        bg: "bg-gradient-to-r from-red-500  to-red-900",
+        cardButtonBg: "bg-indigo-950 active:bg-blue-700"
 
+    },
+    {
+        icon: workshopIcon,
+        text: "Horas de voluntariado realizadas",
+        number: "70",
+        bg: " from-green-600  to-emerald-800",
+        cardButtonBg: "bg-indigo-950 active:bg-blue-700"
+
+    },
+    {
+        icon: workshopIcon,
+        text: "Becarios activos",
+        number: "213",
+        bg: "from-yellow-500  to-yellow-700",
+        cardButtonBg: "bg-indigo-950 active:bg-blue-700 hover:bg-blue-700"
+    },
+]
 const page = () => {
     return (
         <div className='flex flex-row md:flex-col gap-4 h-full w-full'>
-            <div className="flex gap-4 items-center h-1/4 bg-white">
-                <h1>dasfsd</h1>
+            <div className="flex gap-4 items-center h-1/4">
+                {CARD_CONTENT.map(({ icon, text, number, bg, cardButtonBg }) => {
+                    return (
+                        <Card key={text} data={number} Icon={icon} text={text} bg={bg} cardButtonBg={cardButtonBg} />
+                    )
+                })}
             </div>
-
         </div>
         /* 
                  <div className="flex gap-4 pb-2 items-center h-48">
