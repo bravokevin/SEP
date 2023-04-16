@@ -1,34 +1,34 @@
 import Card from '@/components/dashboard/Card'
 import React from 'react'
-import { workshopIcon } from '@/assets/svgs'
+import { chatIcon, userIcon, volunterIcon, workshopIcon } from '@/assets/svgs'
 const CARD_CONTENT = [
     {
         icon: workshopIcon,
         text: "Talleres realizados",
-        number: "15",
+        number: 15,
         bg: "bg-gradient-to-r from-blue-700  to-indigo-900",
-        cardButtonBg: "bg-indigo-950 active:bg-blue-700"
+        cardButtonBg: "bg-indigo-950 active:bg-blue-700 hover:bg-blue-700"
     },
     {
-        icon: workshopIcon,
+        icon: chatIcon,
         text: "Chats Realizados",
-        number: "20",
+        number: 20,
         bg: "bg-gradient-to-r from-red-500  to-red-900",
         cardButtonBg: "bg-indigo-950 active:bg-blue-700"
 
     },
     {
-        icon: workshopIcon,
+        icon: volunterIcon,
         text: "Horas de voluntariado realizadas",
-        number: "70",
+        number: 70,
         bg: " from-green-600  to-emerald-800",
         cardButtonBg: "bg-indigo-950 active:bg-blue-700"
 
     },
     {
-        icon: workshopIcon,
+        icon: userIcon,
         text: "Becarios activos",
-        number: "213",
+        number: 213,
         bg: "from-yellow-500  to-yellow-700",
         cardButtonBg: "bg-indigo-950 active:bg-blue-700 hover:bg-blue-700"
     },
@@ -36,10 +36,10 @@ const CARD_CONTENT = [
 const page = () => {
     return (
         <div className='flex flex-row md:flex-col gap-4 h-full w-full'>
-            <div className="flex gap-4 items-center h-1/4">
+            <div className="flex flex-col md:flex-row gap-4 items-center md:h-1/4">
                 {CARD_CONTENT.map(({ icon, text, number, bg, cardButtonBg }) => {
                     return (
-                        <Card key={text} data={number} Icon={icon} text={text} bg={bg} cardButtonBg={cardButtonBg} />
+                        <Card key={text} stat={number} Icon={icon} text={text} bg={bg} cardButtonBg={cardButtonBg} />
                     )
                 })}
             </div>
