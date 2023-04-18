@@ -1,4 +1,5 @@
 import { auth } from '@googleapis/oauth2';
+import { NextResponse } from 'next/server';
 
 const oAuth2Client = new auth.OAuth2(
   CLIENT_ID,
@@ -6,7 +7,7 @@ const oAuth2Client = new auth.OAuth2(
   REDIRECT_URL
 );
 
-export async function GET(request: Request, res: Response) {
+export async function GET(request: Request, res: NextResponse) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   if (code) {
@@ -16,11 +17,8 @@ export async function GET(request: Request, res: Response) {
         return;
       }
       if (tokens) {
-        console.log('Access token:', tokens.access_token);
-        console.log('Refresh token:', tokens.refresh_token);
-        console.log('Token type:', tokens.token_type);
         oAuth2Client.setCredentials(tokens);
-        res.redirect('/success');
+        NextResponse.redirect('/success');
       }
     });
   }
