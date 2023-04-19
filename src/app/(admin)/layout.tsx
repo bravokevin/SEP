@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <main className='flex md:h-screen bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950 '>
+        <main className='flex  bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950 '>
           <Sidebar />
           <section className='flex flex-col z-10 rounded-2xl bg-white dark:bg-slate-950 p-4 m-3 md:w-screen'>
             <Navbar />

@@ -52,3 +52,9 @@ body {
     background-position: 0% 0;
   }
 }
+
+@layer base {
+  input {
+    @apply p-4
+  }
+}
