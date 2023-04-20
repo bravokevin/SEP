@@ -1,7 +1,7 @@
 import { CheckIcon, LoadingIcon } from '@/assets/svgs'
+import { KindOfActivity } from '@/types/General';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-
 
 const CONTACTS_GROUP_OPTIONS = [
     { inputName: "Kevin", value: "SOLO KEVIN" },
@@ -14,16 +14,27 @@ const CONTACTS_GROUP_OPTIONS = [
     { inputName: "Becarios V+", value: "Becarios V+" },
 ]
 
-const Modal = ({ kindOfActivity, state, color }) => {
-    const { register, handleSubmit } = useForm();
+type ModalProps = {
+    kindOfActivity: KindOfActivity,
+    state: string,
+    color: string
+}
 
+const Modal = ({ kindOfActivity, state, color }: ModalProps) => {
+    const [modalopen, setModalOpen] = useState(false)
+
+    const showModal = () => {
+        const is = modalopen ? false : true;
+        setModalOpen(is)
+    }
+    const { register, handleSubmit } = useForm();
     const [subjectAndGroup, setSubjectAndGroup] = useState({ subject: "", group: "" })
+
     return (
         <div className="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 md:p-8">
-            {state === '' ?
+            {state === 'preparation' ?
                 <div className="text-sm font-light text-gray-500 dark:text-gray-400">
                     <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Coloca el Asusto y selecciona el grupo de contacto</h3>
-
                     <form onSubmit={handleSubmit(sendWorkshops)}>
                         <div className="flex flex-col">
                             <label htmlFor="subject" className="mb-1 text-lg font-bold text-gray-700 dark:text-gray-200">Asunto del correo</label>
@@ -43,17 +54,13 @@ const Modal = ({ kindOfActivity, state, color }) => {
                                 }
                             </select>
                         </div>
-
                         <div className="justify-between items-center pt-0 space-y-4 sm:flex sm:space-y-0 mt-4">
                             <div className="items-center space-y-4 sm:space-x-4 sm:flex sm:space-y-0">
                                 <button onClick={showModal} type="button" className="py-2 px-4 w-full text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 sm:w-auto hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
-                                {/* <button type="submit" className="py-2 px-4 w-full text-sm font-medium text-white bg-green-500 rounded-lg border border-transparent sm:w-auto hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-primary-300 focus:z-10">Enviar</button> */}
                                 <button type="submit" className="py-2 px-4 w-full text-sm font-medium text-center text-white rounded-lg bg-green-500 sm:w-auto hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar</button>
                             </div>
                         </div>
                     </form>
-
-
                 </div>
                 :
                 state === "sending" ? <div className="flex flex-col justify-center items-center">
@@ -64,7 +71,7 @@ const Modal = ({ kindOfActivity, state, color }) => {
                 </div>
                     :
                     <div className="flex flex-col justify-center items-center transition-all duration-500">
-                        <h3 className="mb-3 text-sm opacity-50 font-bold text-green-900 dark:text-white">${kindOfActivity}s enviados de forma exitosa!</h3>
+                        <h3 className="mb-3 text-sm opacity-50 font-bold text-green-900 dark:text-white capitalize">${kindOfActivity}s enviados de forma exitosa!</h3>
                         <CheckIcon color='#ffffff' />
                         <button onClick={showModal} type="button" className="py-2 px-4 w-full text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 sm:w-auto hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cerrar</button>
                     </div>}

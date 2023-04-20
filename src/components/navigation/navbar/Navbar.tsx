@@ -10,7 +10,7 @@ const Navbar = () => {
     isOpen ? setSidebar(false) : setSidebar(true);
   }
   return (
-    <nav className="block h-20 w-full  top-0 left-0">
+    <nav className="block h-12 w-full  top-0 left-0">
       <div className="flex md:order-2">
         <button onClick={setUpSidebar} aria-controls="separator-sidebar" type="button" className="inline-flex items-center p-2 text-sm text-emerald-500 rounded-lg  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:bg-green-800 dark:text-emerlad-400 dark:hover:bg-emerald-950 dark:focus:ring-emerald-600">
           <span className="sr-only">Open sidebar</span>

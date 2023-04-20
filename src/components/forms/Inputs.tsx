@@ -1,3 +1,4 @@
+import { Workshop } from '@/types/Workshop';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 type InputProps = {
     inputType: string,
@@ -33,7 +34,7 @@ const Input = ({ inputType, title, inputOptions, type, placeHolder, register, in
         return (
             <div className='col-span-2 h-fit' key={inputId}>
                 <label htmlFor={title.trim()} className="block mb-2 text-sm m-l-1 font-medium max-h-10 text-slate-400">{title}</label>
-                <textarea defaultValue={placeHolder} {...register(inputId)} id={title.trim()} className="focus:outline-none  focus:outline-offset-0 py-1 px-3 rounded-md w-full bg-emerald-950  ring-1 ring-emerald-900 active:border-zinc-950 focus:outline-emerald-600 " placeholder={placeHolder} />
+                <textarea defaultValue={placeHolder} {...register(inputId)} id={title.trim()} className="min-h-[4rem] focus:outline-none  focus:outline-offset-0 py-1 px-3 rounded-md w-full bg-emerald-950  ring-1 ring-emerald-900 active:border-zinc-950 focus:outline-emerald-600 " placeholder={placeHolder} />
             </div>
         )
     }
@@ -95,7 +96,7 @@ const Input = ({ inputType, title, inputOptions, type, placeHolder, register, in
                     {inputOptions!.map((input) => {
                         return (
                             <div className="flex flex-row items-center mr-4" key={input}>
-                                <input defaultValue={placeHolder} {...register(inputId)} type="checkbox" value={input} id='year' className='w-4 h-4 bg-emerald-900 text-emerald-900 accent-green-600  border-gray-300 rounded focus:ring-0 ' />
+                                <input {...register(inputId)} type="checkbox" value={input} id='year' className='w-4 h-4 bg-emerald-900  accent-green-500 text-emerald-600 border-gray-300 focus:ring-0 ' />
                                 <label htmlFor="year" className='ml-2 font-medium text-sm '>{input}</label>
                             </div>
                         )

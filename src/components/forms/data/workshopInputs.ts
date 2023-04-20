@@ -62,7 +62,7 @@ const WORKSHOP_INPUT_ELEMENTS = [
         title: "Modalidad",
         placeHolder: "Presencial",
         type: "text",
-        inputOptions: ['Presencial', 'Virtual', 'Asincrono'],
+        inputOptions: ['Presencial', 'Virtual', 'Asincrono', 'Hibrido'],
         inputType: 'selection',
         inputId: "kindOfWorkshop",
         required: true

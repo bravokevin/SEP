@@ -1,6 +1,6 @@
 import shortUUID from "short-uuid";
 
-export type KindOfActivity = 'Presencial' | 'Virtual';
+export type KindOfChat = 'Presencial' | 'Virtual';
 
 export type ChatLevel = "Basico" | "Intermedio" | "Avanzado";
 
@@ -17,7 +17,7 @@ export interface Chat {
     endHour: string;
     speaker: string
     numberOfParticipants: number;
-    kindOfChat: KindOfActivity;
+    kindOfChat: KindOfChat;
     platform: Platform;
     description: string;
     turn: ChatTurn;
