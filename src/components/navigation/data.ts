@@ -4,8 +4,8 @@ export const SIDEBAR_ACTIVITIES_ACTIONS = [
         buttonName: "Talleres",
         itemList: [
             { name: "Crear Taller", link: "/talleres/crear" },
-            { name: "Estadísticas de talleres", link: "/talleres/estadisticas" },
-            { name: "Lista de talleres", link: "/talleres/lista" },
+            // { name: "Estadísticas de talleres", link: "/talleres/estadisticas" },
+            // { name: "Lista de talleres", link: "/talleres/lista" },
         ]
     },
     {
@@ -13,8 +13,8 @@ export const SIDEBAR_ACTIVITIES_ACTIONS = [
         buttonName: "Chats",
         itemList: [
             { name: "Crear Chat", link: "/chats/crear" },
-            { name: "Estadísticas de chats", link: "/chats/estadisticas" },
-            { name: "Lista de chats", link: "/chats/lista" },
+            // { name: "Estadísticas de chats", link: "/chats/estadisticas" },
+            // { name: "Lista de chats", link: "/chats/lista" },
 
         ]
     },
@@ -23,8 +23,8 @@ export const SIDEBAR_ACTIVITIES_ACTIONS = [
         buttonName: "Voluntariado",
         itemList: [
             { name: "Crear Voluntariado", link: "voluntariado/crear" },
-            { name: "Estadísticas de talleres", link: "voluntariado/estadisticas" },
-            { name: "Lista de voluntariado", link: "/voluntariado/lista" },
+            // { name: "Estadísticas de talleres", link: "voluntariado/estadisticas" },
+            // { name: "Lista de voluntariado", link: "/voluntariado/lista" },
 
         ]
     }
