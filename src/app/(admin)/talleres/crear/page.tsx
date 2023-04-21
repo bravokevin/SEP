@@ -15,15 +15,15 @@ const Page = () => {
     const [subjectAndGroup, setSubjectAndGroup] = useState({ subject: "", group: "" })
     const [workshopData, setWorkshopData] = useState<Workshop[]>([
         {
-            "name": "Liderazgo para el siglo 21",
+            "name": "Empoderamiento femenino",
             "pensum": "Liderazgo",
             "date": "2023-04-25",
             "startHour": "18:33",
             "endHour": "22:30",
             "speaker": "Luis Lopéz",
             "numberOfParticipants": 20,
-            "kindOfWorkshop": "Presencial",
-            "platform": "Oficinas de AVAA",
+            "kindOfWorkshop": "Virtual",
+            "platform": "Zoom",
             "avaaYear": [
                 "V",
                 "+V"
@@ -32,7 +32,7 @@ const Page = () => {
             "id": "guy2a9Z8oo7Nb45z343teEyBNAq" as shortUUID.SUUID
         },
         {
-            "name": "Liderazgo para el siglo 21",
+            "name": "Liderazgo para el futuro",
             "pensum": "Liderazgo",
             "date": "2023-04-26",
             "startHour": "18:33",
@@ -49,7 +49,7 @@ const Page = () => {
             "id": "guy2a9Z8oo7Nb43786778435zEyBNAq" as shortUUID.SUUID
         },
         {
-            "name": "Liderazgo para el siglo 21",
+            "name": "Como crear un vision board",
             "pensum": "Liderazgo",
             "date": "2023-04-27",
             "startHour": "18:33",

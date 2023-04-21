@@ -21,8 +21,8 @@ export const SIDEBAR_ACTIVITIES_ACTIONS = [
         ]
     },
     {
-        icon: "bx bx-run",
-        buttonName: volunterIcon,
+        icon: volunterIcon,
+        buttonName: "Voluntariado",
         itemList: [
             { name: "Crear Voluntariado", link: "voluntariado/crear" },
             // { name: "Estadísticas de talleres", link: "voluntariado/estadisticas" },

@@ -5,7 +5,7 @@ import { useState } from "react";
 type DropdownButtonProps = {
     buttonName: string;
     itemList: { name: string, link: string }[];
-    Icon: React.ReactNode;
+    Icon: any;
 };
 
 const DropdownButton = ({ buttonName, itemList, Icon }: DropdownButtonProps) => {
