@@ -19,7 +19,7 @@ export const dashboardComponent = () => {
 
 export const userIcon = () => {
     return (
-        <svg fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg fill="currentColor" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
         </svg>
     )
@@ -27,13 +27,13 @@ export const userIcon = () => {
 
 export const volunterIcon = () => {
     return (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 22V16.9612C14 16.3537 13.7238 15.7791 13.2494 15.3995L11.5 14M11.5 14L13 7.5M11.5 14L10 13M13 7.5L11 7M13 7.5L15.0426 10.7681C15.3345 11.2352 15.8062 11.5612 16.3463 11.6693L18 12M10 13L11 7M10 13L9.40011 16.2994C9.18673 17.473 8.00015 18.2 6.85767 17.8573L4 17M11 7L8.10557 8.44721C7.428 8.786 7 9.47852 7 10.2361V12M14.5 3.5C14.5 4.05228 14.0523 4.5 13.5 4.5C12.9477 4.5 12.5 4.05228 12.5 3.5C12.5 2.94772 12.9477 2.5 13.5 2.5C14.0523 2.5 14.5 2.94772 14.5 3.5Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
+        <svg viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 22V16.9612C14 16.3537 13.7238 15.7791 13.2494 15.3995L11.5 14M11.5 14L13 7.5M11.5 14L10 13M13 7.5L11 7M13 7.5L15.0426 10.7681C15.3345 11.2352 15.8062 11.5612 16.3463 11.6693L18 12M10 13L11 7M10 13L9.40011 16.2994C9.18673 17.473 8.00015 18.2 6.85767 17.8573L4 17M11 7L8.10557 8.44721C7.428 8.786 7 9.47852 7 10.2361V12M14.5 3.5C14.5 4.05228 14.0523 4.5 13.5 4.5C12.9477 4.5 12.5 4.05228 12.5 3.5C12.5 2.94772 12.9477 2.5 13.5 2.5C14.0523 2.5 14.5 2.94772 14.5 3.5Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
     )
 }
 
 export const chatIcon = () => {
     return (
-        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9,14a4,4,0,1,0-4-4A4,4,0,0,0,9,14ZM9,8a2,2,0,1,1-2,2A2,2,0,0,1,9,8ZM6,15h6a4,4,0,0,1,4,4v2a1,1,0,0,1-2,0V19a2,2,0,0,0-2-2H6a2,2,0,0,0-2,2v2a1,1,0,0,1-2,0V19A4,4,0,0,1,6,15Zm11.462-5A5.977,5.977,0,0,1,15.7,14.253a1,1,0,0,1-1.414-1.414,4.015,4.015,0,0,0,0-5.678A1,1,0,1,1,15.7,5.747,5.977,5.977,0,0,1,17.462,10Zm-.181,7.7a1,1,0,0,1,.024-1.414,8.667,8.667,0,0,0,0-12.562A1,1,0,0,1,18.7,2.281a10.667,10.667,0,0,1,0,15.438,1,1,0,0,1-1.414-.024Z"></path></g></svg>
+        <svg fill="#FFFFFF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9,14a4,4,0,1,0-4-4A4,4,0,0,0,9,14ZM9,8a2,2,0,1,1-2,2A2,2,0,0,1,9,8ZM6,15h6a4,4,0,0,1,4,4v2a1,1,0,0,1-2,0V19a2,2,0,0,0-2-2H6a2,2,0,0,0-2,2v2a1,1,0,0,1-2,0V19A4,4,0,0,1,6,15Zm11.462-5A5.977,5.977,0,0,1,15.7,14.253a1,1,0,0,1-1.414-1.414,4.015,4.015,0,0,0,0-5.678A1,1,0,1,1,15.7,5.747,5.977,5.977,0,0,1,17.462,10Zm-.181,7.7a1,1,0,0,1,.024-1.414,8.667,8.667,0,0,0,0-12.562A1,1,0,0,1,18.7,2.281a10.667,10.667,0,0,1,0,15.438,1,1,0,0,1-1.414-.024Z"></path></g></svg>
     )
 }
 
