@@ -136,7 +136,7 @@ const Page = () => {
         setTimeout(() => {
             setLoading("not")
             setModalOpen(false)
-        }, 5000)
+        }, 10000)
     }
 
     const showModal = () => {
