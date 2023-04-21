@@ -8,7 +8,7 @@ type DropdownButtonProps = {
     itemList: { name: string, link: string }[];
 };
 
-const DropdownButton = ({ buttonName, itemList, icon }: DropdownButtonProps): JSX.Element => {
+const DropdownButton = ({ buttonName, itemList, icon }: DropdownButtonProps) => {
     const [isDropdownOpen, setDropdown] = useState(false);
     const toggleDropdown = () => setDropdown(!isDropdownOpen);
 
