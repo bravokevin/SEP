@@ -12,9 +12,9 @@ import { Montserrat } from 'next/font/google';
 // const auth = ""
 // // the calendar instance 
 
-const CLIENT_ID ="";
-const CLIENT_SECRET ="";
-const REDIRECT_URL ="http://localhost:3000/api/google/calendarCallback";
+const CLIENT_ID = "";
+const CLIENT_SECRET = "";
+const REDIRECT_URL = "http://localhost:3000/api/google/calendarCallback";
 
 import { auth } from '@googleapis/oauth2';
 
@@ -90,7 +90,7 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //  */
 // const getCalendarId = async (): Promise<string> => {
 //     const auth = await getAccessToken()
-//     // the calendar instance 
+//     // the calendar instance
 //     const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
 //     let calendarId = '';
 //     if ((await Calendar.calendars.get({ calendarId: CALENDAR_ID })).data.id === null) {
@@ -106,7 +106,7 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 // /**
 //  * it removes the spaces and the points from the string passed as argument
 //  * @param str the string to remove the spaces and the points
-//  * @returns 
+//  * @returns
 //  */
 // const quite = (str: string): string => {
 //     const withNoPoint = str.replace(/\./g, "")
@@ -165,8 +165,8 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //     switch (kindOfWorkshop) {
 
 //         case "Presencial":
-//             calendarDescription = `<b>Competencia Asociada:</b> ${pensum} 
-// <b>Facilitador:</b> ${speaker} 
+//             calendarDescription = `<b>Competencia Asociada:</b> ${pensum}
+// <b>Facilitador:</b> ${speaker}
 // <b>Modalidad:</b> ${kindOfWorkshop}
 // <b>Lugar:</b> ${platform}
 
@@ -174,8 +174,8 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //             break
 
 //         case "Virtual":
-//             calendarDescription = `<b>Competencia Asociada:</b> ${pensum} 
-// <b>Facilitador:</b> ${speaker} 
+//             calendarDescription = `<b>Competencia Asociada:</b> ${pensum}
+// <b>Facilitador:</b> ${speaker}
 // <b>Modalidad:</b> ${kindOfWorkshop}
 // <b>Plataforma:</b> ${platform}
 // <b>Link de la reunion:</b> ${meetingLink}
@@ -186,8 +186,8 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //             break
 
 //         case "Asincrono":
-//             calendarDescription = `<b>Competencia Asociada:</b> ${pensum} 
-// <b>Facilitador:</b> ${speaker} 
+//             calendarDescription = `<b>Competencia Asociada:</b> ${pensum}
+// <b>Facilitador:</b> ${speaker}
 // <b>Modalidad:</b> ${kindOfWorkshop}
 // <b>Plataforma:</b> ${platform}
 
@@ -210,7 +210,7 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 // const createEvent = async (values: Workshop): Promise<string[] | string> => {
 //     const auth = await getAccessToken()
 //     // console.log(auth)
-//     // the calendar instance 
+//     // the calendar instance
 //     const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
 //     //handler the case in where the calendar dosnt exist
 //     const { name, description, speaker, pensum, kindOfWorkshop, platform, date, startHour, endHour } = values;
@@ -259,7 +259,7 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //  */
 // const getMeetEventLink = async (eventId: string): Promise<string[]> => {
 //     const auth = await getAccessToken()
-//     // the calendar instance 
+//     // the calendar instance
 //     const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
 //     const calendarId = await getCalendarId();
 //     const event = await Calendar.events.get({ calendarId, eventId });
@@ -316,9 +316,9 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 // };
 
 
-// /** 
+// /**
 //  * Generates a short url link by using the firebase Dynamic links API
-//  * 
+//  *
 //  * @see {link https://firebase.google.com/docs/dynamic-links/rest} for details about the firebase dynamic links API
 //  * It uses the rest API of firebase dynamic links to create a shortn link
 //  * @param link the link we want to shorten
@@ -347,30 +347,30 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 // }
 
 
-const substractMonths = (montsTosubstract: number) => {
-    const date = new Date();
-    date.setMonth(date.getMonth() - montsTosubstract);
-    return date.toISOString();
-}
+// const substractMonths = (montsTosubstract: number) => {
+//     const date = new Date();
+//     date.setMonth(date.getMonth() - montsTosubstract);
+//     return date.toISOString();
+// }
 
 
-const getEvents = async (calendarId: string = 'primary') => {
-    let eventst;
-    Calendar.events.list(
-        {
-            calendarId: calendarId,
-            timeMin: substractMonths(3),
-            orderBy: 'startTime',
+// const getEvents = async (calendarId: string = 'primary') => {
+//     let eventst;
+//     Calendar.events.list(
+//         {
+//             calendarId: calendarId,
+//             timeMin: substractMonths(3),
+//             orderBy: 'startTime',
 
-        },
-        (err, res) => {
-            if (err) return console.error('The API returned an error: ' + err);
-            const events = res.data.items;
-            eventst = events;
-        }
-    );
-}
+//         },
+//         (err, res) => {
+//             if (err) return console.error('The API returned an error: ' + err);
+//             const events = res.data.items;
+//             eventst = events;
+//         }
+//     );
+// }
 
-// export default getEvents;
+// // export default getEvents;
 
 
