@@ -41,7 +41,7 @@ export default function Home() {
       <div className="mb-32 grid text-center lg:grid-cols-2 lg:text-left gap-6">
         <a
           href="/auth/register"
-          className="fifi relative bg-black group rounded-lg border border-none px-5 py-4 transition-colors"
+          className="fifi relative bg-black group rounded-lg border  px-5 py-4 transition-colors"
           rel="noopener noreferrer"
         >
           <h2 className={`${roboto.className} mb-3 text-2xl font-semibold`}>
@@ -61,7 +61,7 @@ export default function Home() {
 
         <a
           href="/auth/login"
-          className="fifi relative bg-black group rounded-lg border border-none px-5 py-4 transition-colors"
+          className="fifi relative bg-black group rounded-lg border  px-5 py-4 transition-colors"
           rel="noopener noreferrer"
         >
           <h2 className={`${roboto.className} mb-3 text-2xl font-semibold`}>
