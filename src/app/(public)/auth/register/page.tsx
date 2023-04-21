@@ -1,14 +1,10 @@
-import Navbar from '@/components/navigation/navbar/Navbar'
-import Sidebar from '@/components/navigation/sidebar/Sidebar'
 import Image from 'next/image'
 import React from 'react'
 
 const page = () => {
     return (
         <main className="flex flex-col sm:flex-row-reverse sm:h-screen bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950">
-            <Sidebar />
             <section className="flex items-center  w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
-                <Navbar />
                 <div className="flex flex-col items-center w-full max-w-sm py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-2.5 pt-4 md:py-4 transform origin-left md:gap-44">
                     <hr className="hidden md:block w-full h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36 " />
                     <div className="flex items-center space-x-1 -translate-x-10 relative dark:drop-shadow-[0_0_1rem_#279902]">
