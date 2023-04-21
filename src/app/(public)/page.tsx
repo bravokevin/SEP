@@ -6,7 +6,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-16 lg:p-24 gap-16 ">
+    <main className="flex min-h-screen flex-col items-center justify-between p-16 lg:p-24 gap-16 bg-gradient-to-b from-emerald-950 to-slate-950">
       <div className="z-10 w-full max-w-5xl items-center justify-left font-mono text-sm ">
         <div className="bottom-0 left-0 flex h-48 w-full items-end justify-center lg:justify-end lg:static lg:h-auto lg:w-auto">
           <a
