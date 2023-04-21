@@ -34,31 +34,31 @@ const VolunteerList: React.FC<VolunteerListProps> = (props) => {
                             </button>
 
                             <div className="flex-1 min-w-fit">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                <p className="text-sm font-medium text-gray-900 truncate text-white">
                                     {name}
                                 </p>
-                                <p className="text-xs text-gray-500 truncate dark:text-gray-400">
+                                <p className="text-xs text-gray-500 truncate text-gray-400">
                                     {asociatedProject}
                                 </p>
                             </div>
                             <div className="flex-1 min-w-0 text-center">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                <p className="text-sm font-medium text-gray-900 truncate text-white">
                                     {startDate === endDate ? `${new Date(startDate).getDate()}/${new Date(startDate).getMonth() + 1}` : `Del ${new Date(startDate).getDate()}/${new Date(startDate).getMonth() + 1} al ${new Date(endDate).getDate()}/${new Date(endDate).getMonth() + 1}`}
                                 </p>
-                                <p className="text-xs text-gray-500 truncate dark:text-gray-400">
+                                <p className="text-xs text-gray-500 truncate text-gray-400">
                                     De {startHour} a {endHour}
                                 </p>
                             </div>
                             <div className="flex-1 min-w-0 text-center">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                <p className="text-sm font-medium text-gray-900 truncate text-white">
                                     {place}
                                 </p>
-                                <p className="text-xs text-gray-500 truncate dark:text-gray-400">
+                                <p className="text-xs text-gray-500 truncate text-gray-400">
                                     {numberOfParticipants} cupos
                                 </p>
                             </div>
                             <div className="flex-1 min-w-0 text-center">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                <p className="text-sm font-medium text-gray-900 truncate text-white">
                                     {kindOfVolunteer}
                                 </p>
                             </div>

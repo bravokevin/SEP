@@ -3,15 +3,15 @@ import React from 'react'
 
 const page = () => {
     return (
-        <main className="flex flex-col sm:flex-row-reverse min-h-screen sm:h-screen bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950">
+        <main className="flex flex-col sm:flex-row-reverse min-h-screen sm:h-screen bg-gradient-to-b from-emerald-950 to-slate-950">
             <section className="flex items-center  w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
                 <div className="flex flex-col items-center w-full max-w-sm py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-2.5 pt-4 md:py-4 transform origin-left md:gap-44">
-                    <hr className="hidden md:block w-full h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36 " />
-                    <div className="flex items-center space-x-1 -translate-x-10 relative dark:drop-shadow-[0_0_1rem_#279902]">
+                    <hr className="hidden md:block w-full h-px my-8 bg-gray-200 border-0 bg-emerald-700 opacity-75 rotate-90 -translate-x-36 " />
+                    <div className="flex items-center space-x-1 -translate-x-10 relative drop-shadow-[0_0_1rem_#279902]">
                         <Image src='/logo-proexcelencia-cap.png' alt='Proexcelencia Logo' width={80} height={80}></Image>
                         <Image src='/logo-proexcelencia-words.png' alt='Proexcelencia Logo' width={200} height={100} className='animate-pulse'></Image>
                     </div>
-                    <hr className="hidden w-full overflow-hidden -z-10 md:block  h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36" />
+                    <hr className="hidden w-full overflow-hidden -z-10 md:block  h-px my-8 bg-gray-200 border-0 bg-emerald-700 opacity-75 rotate-90 -translate-x-36" />
                 </div>
             </section>
             <section className="justify-center px-4 md:px-0 md:flex md:w-2/3">
@@ -39,16 +39,16 @@ const page = () => {
                                 Al registrarse, acepta el procesamiento de sus datos personales por ProExcelencia como se describe en las <a href="https://planetscale.com/legal/privacy" target="_blank" className='text-green-500 hover:font-semibold' >Politica de Privacidad.</a>
                             </p>
                             <div className="flex items-center mb-4 gap-2">
-                                <input className="w-4 h-4 text-blue-600 bg-slate-400 rounded focus:ring-blue-500 dark:focus:ring-blue-600" type="checkbox" required={true} />
+                                <input className="w-4 h-4 text-blue-600 bg-slate-400 rounded focus:ring-blue-500 focus:ring-blue-600" type="checkbox" required={true} />
                                 <label className="mb-0 font-normal text-xs" htmlFor="tos">He leido y acepto los{" "}<a href="https://planetscale.com/legal/agreement" target="_blank" className='text-green-500 hover:font-semibold' >Terminos del servicio.</a></label>
                             </div>
                             <button name="button" type="submit" className="bg-emerald-950 hover:bg-green-600 hover:border-green-600 font-semibold box-border border-emerald-900 border-2 py-1 px-4 w-full rounded-md">Registrate</button>
                         </form>
                     </div>
                     <div className="inline-flex items-center justify-around w-full ">
-                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-40" />
-                        <span className="absolute px-3 font-medium text-gray-900  dark:text-white ">o</span>
-                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-40" />
+                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 bg-emerald-700 opacity-40" />
+                        <span className="absolute px-3 font-medium text-gray-900  text-white ">o</span>
+                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 bg-emerald-700 opacity-40" />
                     </div>
                     <div className="flex">
                         <form className="mb-4 w-full" action="/auth/github" acceptCharset="UTF-8" method="post">

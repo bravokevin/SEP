@@ -3,15 +3,15 @@ import React from 'react'
 
 const page = () => {
     return (
-        <main className="flex flex-col md:flex-row-reverse min-h-screen md:h-screen bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950">s
+        <main className="flex flex-col md:flex-row-reverse min-h-screen md:h-screen bg-gradient-to-b from-emerald-950 to-slate-950">s
             <section className="flex items-center  w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
                 <div className="flex flex-col items-center w-full max-w-sm py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-2.5 pt-4 md:py-4 transform origin-left md:gap-44">
-                    <hr className="hidden md:block w-full h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36 " />
-                    <div className="flex items-center space-x-1 -translate-x-10 relative dark:drop-shadow-[0_0_1rem_#279902]">
+                    <hr className="hidden md:block w-full h-px my-8 border-0 bg-emerald-700 opacity-75 rotate-90 -translate-x-36 " />
+                    <div className="flex items-center space-x-1 -translate-x-10 relative drop-shadow-[0_0_1rem_#279902]">
                         <Image src='/logo-proexcelencia-cap.png' alt='Proexcelencia Logo' width={80} height={80}></Image>
                         <Image src='/logo-proexcelencia-words.png' alt='Proexcelencia Logo' width={200} height={100} className='animate-pulse'></Image>
                     </div>
-                    <hr className="hidden w-full md:block  h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-75 rotate-90 -translate-x-36" />
+                    <hr className="hidden w-full md:block  h-px my-8  border-0 bg-emerald-700 opacity-75 rotate-90 -translate-x-36" />
                 </div>
             </section>
             <section className="justify-center px-4 md:px-0 md:flex md:w-2/3">
@@ -38,9 +38,9 @@ const page = () => {
                         </form>
                     </div>
                     <div className="inline-flex items-center justify-around w-full ">
-                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-40" />
-                        <span className="absolute px-3 font-medium text-gray-900  dark:text-white ">o</span>
-                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 dark:bg-emerald-700 opacity-40" />
+                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 bg-emerald-700 opacity-40" />
+                        <span className="absolute px-3 font-medium text-gray-900  text-white ">o</span>
+                        <hr className="w-40 h-px my-8 bg-gray-200 border-0 bg-emerald-700 opacity-40" />
                     </div>
                     <div className="flex">
                         <form className="mb-4 w-full" action="/auth/github" acceptCharset="UTF-8" method="post">

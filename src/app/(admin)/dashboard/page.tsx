@@ -61,7 +61,7 @@ const page = () => {
                 </div>
                 <div className="rounded-lg shadow-lg p-4 bg-white">
                     <div className="flex items-center justify-center mb-4 mt-4 text-center ">
-                        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Proximas actividades✌️</h5>
+                        <h5 className="text-xl font-bold leading-none text-gray-900 text-white">Proximas actividades✌️</h5>
                     </div>
                     <div className="flow-root max-w-[24rem]">
                         <DashboardList data={exampleData} />

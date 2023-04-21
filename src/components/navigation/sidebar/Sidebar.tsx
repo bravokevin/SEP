@@ -13,7 +13,7 @@ import { sidebarAtom } from '@/state/mainState'
 const Sidebar = () => {
     const [isOpen,] = useAtom(sidebarAtom)
     return (
-        <aside className={`${isOpen ? "flex" : "hidden"} flex-col gap-4 justify-start items-center w-72 bg-white py-8 px-2 bg-gradient-to-b dark:from-emerald-950 dark:to-slate-950 `}>
+        <aside className={`${isOpen ? "flex" : "hidden"} flex-col gap-4 justify-start items-center w-72 bg-white py-8 px-2 bg-gradient-to-b from-emerald-950 to-slate-950 `}>
             <div className='flex items-center mb-2'>
                 <Link href="/dashboard" >
                     <Image src={logo} width={180} alt="Logo Proexcelencia" />
