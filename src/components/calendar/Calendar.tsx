@@ -1,11 +1,14 @@
 import React from 'react'
-import { Calendar as BigCalendar, globalizeLocalizer } from 'react-big-calendar'
+import { Calendar as BigCalendar, momentLocalizer } from 'react-big-calendar'
+import moment from 'moment'
+
+const localizer = momentLocalizer(moment)
 
 const Calendar = () => {
     return (
         <div>
             <BigCalendar
-            // // localizer={localizer}
+                localizer={localizer}
             // // events={myEventsList}
             // startAccessor="start"
             // endAccessor="end"
