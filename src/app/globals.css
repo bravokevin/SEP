@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 314, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 2, 44, 34;
+  --background-end-rgb: 2, 6, 23;
+  --border-primary: var(--gray-800)
 }
 
 @media (prefers-color-scheme: dark) {
