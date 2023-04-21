@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useAtom } from 'jotai'
-
+import { dashboardComponent } from '@/assets/svgs'
 import logo from '@/../public/proexcelencia.png'
 import { SIDEBAR_ACTIVITIES_ACTIONS } from '../data'
 import DropdownButton from '../DropdownButton'
@@ -20,13 +20,13 @@ const Sidebar = () => {
                 </Link>
             </div>
             <div className='w-full flex flex-col justify-between'>
-                <DropdownButton buttonName="Panel general" icon='adfsads' itemList={[{ link: '/dashboard', name: 'Estadisticas generales' }]} />
+                <DropdownButton buttonName="Panel general" itemList={[{ link: '/dashboard', name: 'Estadisticas generales' }]} Icon={dashboardComponent} />
             </div>
             <SidebarSeparator text='Actividades' />
             <div className='w-full flex flex-col justify-between'>
                 {SIDEBAR_ACTIVITIES_ACTIONS.map(({ buttonName, icon, itemList }) => {
                     return (
-                        <DropdownButton key={buttonName} buttonName={buttonName} icon={icon} itemList={itemList} />
+                        <DropdownButton key={buttonName} buttonName={buttonName} Icon={icon} itemList={itemList} />
                     )
                 })}
             </div>

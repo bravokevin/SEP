@@ -1,6 +1,8 @@
+import { chatIcon, volunterIcon, workshopIcon } from '@/assets/svgs'
+
 export const SIDEBAR_ACTIVITIES_ACTIONS = [
     {
-        icon: "bx bxs-dashboard",
+        icon: workshopIcon,
         buttonName: "Talleres",
         itemList: [
             { name: "Crear Taller", link: "/talleres/crear" },
@@ -9,7 +11,7 @@ export const SIDEBAR_ACTIVITIES_ACTIONS = [
         ]
     },
     {
-        icon: "bx bxs-user-voice",
+        icon: chatIcon,
         buttonName: "Chats",
         itemList: [
             { name: "Crear Chat", link: "/chats/crear" },
@@ -20,7 +22,7 @@ export const SIDEBAR_ACTIVITIES_ACTIONS = [
     },
     {
         icon: "bx bx-run",
-        buttonName: "Voluntariado",
+        buttonName: volunterIcon,
         itemList: [
             { name: "Crear Voluntariado", link: "voluntariado/crear" },
             // { name: "Estadísticas de talleres", link: "voluntariado/estadisticas" },

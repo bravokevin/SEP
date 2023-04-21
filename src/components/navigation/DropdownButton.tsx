@@ -3,20 +3,19 @@ import Link from "next/link";
 import { useState } from "react";
 
 type DropdownButtonProps = {
-    icon: string;
     buttonName: string;
     itemList: { name: string, link: string }[];
+    Icon: React.ReactNode;
 };
 
-const DropdownButton = ({ buttonName, itemList, icon }: DropdownButtonProps) => {
+const DropdownButton = ({ buttonName, itemList, Icon }: DropdownButtonProps) => {
     const [isDropdownOpen, setDropdown] = useState(false);
     const toggleDropdown = () => setDropdown(!isDropdownOpen);
-
     return (
         <li className="mb-4 list-none">
             <button onClick={toggleDropdown} type="button" className="flex items-center justify-between p-2 w-full text-sm font-semibold text-gray-900 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-green-600" >
-                <i className={`${icon} w-6 h-6`}>
-                    []
+                <i className={` w-6 h-6`}>
+                    <Icon />
                 </i>
                 <span className="flex-1 ml-3 text-left whitespace-nowrap">{buttonName}</span>
                 <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
