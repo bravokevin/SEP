@@ -8,7 +8,7 @@ import WorkshopsList from '@/components/lists/WorkshopList';
 import shortUUID from 'short-uuid';
 import { CheckIcon } from '@/assets/svgs';
 
-const page = () => {
+const Page = () => {
     const [modalopen, setModalOpen] = useState(false)
     const [loading, setLoading] = useState("not");
     const { register, handleSubmit, formState: { errors }, reset, } = useForm<Workshop>();
@@ -247,4 +247,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
