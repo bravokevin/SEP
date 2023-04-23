@@ -1,19 +1,17 @@
-// // import axios, { AxiosRequestConfig } from 'axios';
+
+import { Chat } from '@/types/Chat';
+import { KindOfActivityTypes } from '@/types/General';
+import { Volunteer } from '@/types/Volunteer';
+import { Workshop } from '@/types/Workshop';
 import { calendar_v3, calendar } from '@googleapis/calendar'
-import { Montserrat } from 'next/font/google';
 // // import { KindOfWorkshop, Workshop, Platform, Pensum } from '..';
 // // import { CALENDAR_ID } from '../constants';
 // // import { getAccessToken } from './oauth';
 // // import createZoomMeeting from './zoom';
 
 // // --------------------------------------------------- Auth related Functions ---------------------------------------------------
-// // create an instant invoked function to get the auth instance
-// // const auth = await getAccessToken()
-// const auth = ""
-// // the calendar instance 
-
-const CLIENT_ID = "";
-const CLIENT_SECRET = "";
+const CLIENT_ID = process.env.GOOGLE_API_CLIENT_ID;
+const CLIENT_SECRET = process.env.GOOGLE_API_CLIENT_SECRET;
 const REDIRECT_URL = "http://localhost:3000/api/google/calendarCallback";
 
 import { auth } from '@googleapis/oauth2';
@@ -23,7 +21,6 @@ const oauth2Client = new auth.OAuth2(
     CLIENT_SECRET,
     REDIRECT_URL
 );
-
 
 const CALENDAR_SCOPES = [
     "https://www.googleapis.com/auth/calendar.readonly",
@@ -39,11 +36,7 @@ const url = oauth2Client.generateAuthUrl({
     scope: CALENDAR_SCOPES
 });
 
-
-
-const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
-
-
+const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth: oauth2Client })
 // // --------------------------------------------------- Calendar Utils Functions ---------------------------------------------------
 
 // /**
@@ -83,24 +76,24 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 
 
 
-// /**
-//  * Evaluates wheter the calendar under the id {@linkcode CALENDAR_ID} exist or not. If exist returns that id, if not, returns the id of the users default calendar.
-//  *
-//  * @returns the deafults calendar id or {@linkcode CALENDAR_ID}
-//  */
-// const getCalendarId = async (): Promise<string> => {
-//     const auth = await getAccessToken()
-//     // the calendar instance
-//     const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
-//     let calendarId = '';
-//     if ((await Calendar.calendars.get({ calendarId: CALENDAR_ID })).data.id === null) {
-//         calendarId = (await Calendar.calendars.get({ calendarId: "primary" })).data.id!;
-//     }
-//     else {
-//         calendarId = CALENDAR_ID;
-//     }
-//     return calendarId;
-// };
+/**
+ * Evaluates wheter the calendar under the id exist or not. If exist returns that id, if not, returns the id of the users default calendar.
+ *
+ * @returns the deafults calendar id or {@linkcode CALENDAR_ID}
+ */
+const getCalendarId = async (calendarId: string): Promise<string> => {
+    let calendar = await Calendar.calendars.get({ calendarId })
+    let id = '';
+
+    if (calendar.data.id === null || calendar.data.id === undefined) {
+        calendar = await Calendar.calendars.get({ calendarId: "primary" })
+        id = calendar.data.id!;
+    }
+    else {
+        id = calendarId;
+    }
+    return id;
+};
 
 
 // /**
@@ -124,23 +117,21 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //     return date;
 // }
 
-// /**
-//  * it formats the date passed as argument to the format needed by the calendar api
-//  *
-//  * @param date the date of the event
-//  * @param startingHour the start hour of the event
-//  * @param endHour the end hour of the event
-//  * @returns the date object of the start and end hour in ISO string format
-//  */
-// const getFormatedDate = (date: string, startingHour: string, endHour: string) => {
-//     const start = new Date(date + "," + quite(startingHour))
-//     const end = new Date(date + "," + quite(endHour));
-//     // subtraemos una hora para que el iosstring este acorde con la hora local
-//     // ver https://stackoverflow.com/questions/29477072/why-does-new-date-differs-1-hour-from-new-date-toisostring
-//     subtractHours(start, 1)
-//     subtractHours(end, 1)
-//     return [start.toISOString(), end.toISOString()];
-// };
+/**
+ * it formats the date passed as argument to the format needed by the calendar api
+ *
+ * @param date the date of the event
+ * @param startingHour the start hour of the event
+ * @param endHour the end hour of the event
+ * @returns the date object of the start and end hour in ISO string format
+ */
+const getFormatedDate = (date: string, startingHour: string, endHour: string) => {
+    const start = new Date(date + "," + startingHour)
+    const end = new Date(date + "," + endHour);
+    return [start.toISOString(), end.toISOString()];
+};
+
+
 // /**
 //  * Creates the description for the calendar event
 //  *
@@ -200,56 +191,56 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 //     return calendarDescription;
 // };
 // // --------------------------------------------------- Calendar Main function ---------------------------------------------------
-// /**
-//  * creates an event with the Workshops values passed as parameter using the google calendar API v3
-//  *
-//  * @param values the information about the workshop
-//  * @see {@link https://developers.google.com/calendar/api/v3/reference/events/insert} for reference about the {insert} method
-//  * @returns the event id
-//  */
-// const createEvent = async (values: Workshop): Promise<string[] | string> => {
-//     const auth = await getAccessToken()
-//     // console.log(auth)
-//     // the calendar instance
-//     const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
-//     //handler the case in where the calendar dosnt exist
-//     const { name, description, speaker, pensum, kindOfWorkshop, platform, date, startHour, endHour } = values;
-//     const calendarId = CALENDAR_ID;
-//     const [start, end] = getFormatedDate(date, startHour, endHour);
-//     let calendarDescription: string;
-//     let eventDetails: calendar_v3.Schema$Event;
+/**
+ * creates an event with the Workshops values passed as parameter using the google calendar API v3
+ *
+ * @param values the information about the workshop
+ * @see {@link https://developers.google.com/calendar/api/v3/reference/events/insert} for reference about the {insert} method
+ * @returns the event id
+ */
+const createEvent = async (values: Workshop | Chat | Volunteer): Promise<string[] | string> => {
 
-//     if (kindOfWorkshop === "Presencial" || platform === 'Padlet') {
-//         calendarDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description);
-//         eventDetails = createEventObject(name, kindOfWorkshop, platform, calendarDescription, start, end);
-//         // creates the event
-//         await Calendar.events.insert({ calendarId: calendarId, conferenceDataVersion: 1, requestBody: eventDetails })
-//         return "NONE";
-//     }
+    const auth = await getAccessToken()
+    // console.log(auth)
+    // the calendar instance
+    const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
+    //handler the case in where the calendar dosnt exist
+    const { name, description, speaker, pensum, kindOfWorkshop, platform, date, startHour, endHour } = values;
+    const calendarId = CALENDAR_ID;
+    const [start, end] = getFormatedDate(date, startHour, endHour);
+    let calendarDescription: string;
+    let eventDetails: calendar_v3.Schema$Event;
 
-//     else {
+    if (kindOfWorkshop === "Presencial" || platform === 'Padlet') {
+        calendarDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description);
+        eventDetails = createEventObject(name, kindOfWorkshop, platform, calendarDescription, start, end);
+        // creates the event
+        await Calendar.events.insert({ calendarId: calendarId, conferenceDataVersion: 1, requestBody: eventDetails, sendUpdates: "all" })
+        return "NONE";
+    }
+    else {
+        if (platform === 'Zoom') {
+            const [join_url, id, password] = await createZoomMeeting(name, start);
+            calendarDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description, join_url, id, password);
+            eventDetails = createEventObject(name, kindOfWorkshop, platform, calendarDescription, start, end, join_url);
+            // creates the event
+            const event = await Calendar.events.insert({ calendarId: calendarId, conferenceDataVersion: 1, requestBody: eventDetails })
+            return [event.data.id, join_url, id, password];
+        }
+        else if (platform === 'Google Meet') {
+            calendarDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description);
+            eventDetails = createEventObject(name, kindOfWorkshop, platform, calendarDescription, start, end);
+            // creates the event
+            const event = await Calendar.events.insert({ calendarId: calendarId, conferenceDataVersion: 1, requestBody: eventDetails })
+            return event.data.id!;
+        }
+        else {
+            return "NONE";
+        }
+    }
+};
 
-//         if (platform === 'Zoom') {
-//             const [join_url, id, password] = await createZoomMeeting(name, start);
-//             calendarDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description, join_url, id, password);
-//             eventDetails = createEventObject(name, kindOfWorkshop, platform, calendarDescription, start, end, join_url);
-//             // creates the event
-//             const event = await Calendar.events.insert({ calendarId: calendarId, conferenceDataVersion: 1, requestBody: eventDetails })
-//             return [event.data.id, join_url, id, password];
-//         }
-//         else if (platform === 'Google Meet') {
-//             calendarDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description);
-//             eventDetails = createEventObject(name, kindOfWorkshop, platform, calendarDescription, start, end);
-//             // creates the event
-//             const event = await Calendar.events.insert({ calendarId: calendarId, conferenceDataVersion: 1, requestBody: eventDetails })
-//             return event.data.id!;
-//         }
-//         else {
-//             return "NONE";
-//         }
 
-//     }
-// };
 // // --------------------------------------------------- Function Related to Google Meet Meeting ---------------------------------------------------
 // /**
 //  * gets the meet meeting link of an specific event
@@ -283,9 +274,9 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 // }
 
 // // --------------------------------------------------- Function Related to "Add to my calendar" link ---------------------------------------------------
-// /**
-//  * It creates an 'Add to my calendar' Link so all the registrant can add the specific event for a workshops to its calendar
-//  *
+/**
+ * It creates an 'Add to my calendar' Link so all the registrant can add the specific event for a workshops to its calendar
+ *
 //  * @see {link https://stackoverflow.com/questions/5831877/how-do-i-create-a-link-to-add-an-entry-to-a-calendar} for more information about how to create the link
 //  * @param workshop the details of a workshop
 //  * @param meetingLink the meeting link
@@ -316,61 +307,31 @@ const Calendar: calendar_v3.Calendar = calendar({ version: 'v3', auth })
 // };
 
 
-// /**
-//  * Generates a short url link by using the firebase Dynamic links API
-//  *
-//  * @see {link https://firebase.google.com/docs/dynamic-links/rest} for details about the firebase dynamic links API
-//  * It uses the rest API of firebase dynamic links to create a shortn link
-//  * @param link the link we want to shorten
-//  * @returns the shortened link
-//  * */
-// const shortenLink = async (link: string): Promise<string> => {
-//     const webApiKey = "AIzaSyCVuL5MWV3CXIyM7C-M8fmEqygCXGFLC38";
-//     const data = {
-//         dynamicLinkInfo: {
-//             domainUriPrefix: 'https://proexcelencia.page.link',
-//             link
-//         },
-//         suffix: {
-//             option: 'SHORT'
-//         }
-//     }
-
-//     const config: AxiosRequestConfig = {
-//         headers: {
-//             "content-type": 'application/json',
-//         },
-//     }
-//     const response = await axios.post(`https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${webApiKey}`, data, config);
-//     return response.data.shortLink;
-
-// }
 
 
-// const substractMonths = (montsTosubstract: number) => {
-//     const date = new Date();
-//     date.setMonth(date.getMonth() - montsTosubstract);
-//     return date.toISOString();
-// }
+/**
+ * Lists the events of a calendar in the last 3 months.
+ * @see link https://developers.google.com/calendar/v3/reference/events/list - for more information about the API
+ * @param calendarId - The ID of the calendar to retrieve events from.
+ */
+export const getCalendarEvents = async (calendarId: string = 'primary') => {
+    let eventst;
+    Calendar.events.list(
+        {
+            calendarId: calendarId,
+            timeMin: substractMonths(3),
+            orderBy: 'startTime',
 
+        },
+        (err, res) => {
+            if (err) return console.error('The API returned an error: ' + err);
+            if (res === null || res === undefined) return console.error('No events found.');
+            const events = res.data.items;
+            eventst = events;
+        }
+    );
+}
 
-// const getEvents = async (calendarId: string = 'primary') => {
-//     let eventst;
-//     Calendar.events.list(
-//         {
-//             calendarId: calendarId,
-//             timeMin: substractMonths(3),
-//             orderBy: 'startTime',
-
-//         },
-//         (err, res) => {
-//             if (err) return console.error('The API returned an error: ' + err);
-//             const events = res.data.items;
-//             eventst = events;
-//         }
-//     );
-// }
-
-// // export default getEvents;
+// export default getEvents;
 
 
