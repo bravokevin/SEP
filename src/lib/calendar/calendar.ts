@@ -4,6 +4,8 @@ import { KindOfActivity, Platform, activityMode } from '@/types/General';
 import { AsociatedProject, Volunteer } from '@/types/Volunteer';
 import { KindOfWorkshop, Pensum, Workshop } from '@/types/Workshop';
 import { calendar_v3, calendar } from '@googleapis/calendar'
+
+import { getFormatedDate, substractMonths } from '../utils';
 // // import { KindOfWorkshop, Workshop, Platform, Pensum } from '..';
 // // import { CALENDAR_ID } from '../constants';
 // // import { getAccessToken } from './oauth';
@@ -120,19 +122,7 @@ const getCalendarId = async (calendarId: string): Promise<string> => {
 //     return date;
 // }
 
-/**
- * it formats the date passed as argument to the format needed by the calendar api
- *
- * @param date the date of the event
- * @param startingHour the start hour of the event
- * @param endHour the end hour of the event
- * @returns the date object of the start and end hour in ISO string format
- */
-const getFormatedDate = (date: string, startingHour: string, endHour: string) => {
-    const start = new Date(date + "," + startingHour)
-    const end = new Date(date + "," + endHour);
-    return [start.toISOString(), end.toISOString()];
-};
+
 
 
 // // --------------------------------------------------- Calendar Main function ---------------------------------------------------
@@ -147,6 +137,7 @@ const createEvent = async (values: Workshop | Chat | Volunteer): Promise<string[
 
     //handler the case in where the calendar dosnt exist
     const { name, description, speaker, pensum, kindOfWorkshop, platform, date, startHour, endHour } = values;
+    
     const calendarId = CALENDAR_ID;
     const [start, end] = getFormatedDate(date, startHour, endHour);
     let calendarDescription: string;
@@ -184,26 +175,6 @@ const createEvent = async (values: Workshop | Chat | Volunteer): Promise<string[
 };
 
 
-// // --------------------------------------------------- Function Related to Google Meet Meeting ---------------------------------------------------
-// /**
-//  * gets the meet meeting link of an specific event
-//  *
-//  * @param eventId the id of the event we want get the meet meeting
-//  * @returns the meet link and its id
-//  */
-// const getMeetEventLink = async (eventId: string): Promise<string[]> => {
-//     const auth = await getAccessToken()
-//     // the calendar instance
-//     const Calendar: calendar_v3.Calendar = google.calendar({ version: 'v3', auth })
-//     const calendarId = await getCalendarId();
-//     const event = await Calendar.events.get({ calendarId, eventId });
-//     const meetLink = event.data.hangoutLink!;
-//     const index = meetLink.lastIndexOf('/');
-//     const meetId = meetLink.slice(index + 1);
-//     return [meetLink, meetId];
-// };
-
-
 // /**
 //  * it adds a specific number of `days` to a date
 //  * @param date the date of the event
@@ -215,40 +186,6 @@ const createEvent = async (values: Workshop | Chat | Volunteer): Promise<string[
 //     result.setDate(result.getDate() + days);
 //     return result.toISOString();
 // }
-
-// // --------------------------------------------------- Function Related to "Add to my calendar" link ---------------------------------------------------
-/**
- * It creates an 'Add to my calendar' Link so all the registrant can add the specific event for a workshops to its calendar
- *
-//  * @see {link https://stackoverflow.com/questions/5831877/how-do-i-create-a-link-to-add-an-entry-to-a-calendar} for more information about how to create the link
-//  * @param workshop the details of a workshop
-//  * @param meetingLink the meeting link
-//  * @param meetingId the meeting id
-//  * @returns an 'Add to my calendar' link
-//  */
-// const getPublicEventLink = async (workshop: Workshop, meetingLink?: string, meetingId?: string, meetingPasword?: string) => {
-//     const { name, description, speaker, pensum, kindOfWorkshop, platform, date, startHour, endHour } = workshop;
-//     const location = meetingLink ? meetingLink : platform;
-//     const calendarName = encodeURIComponent(name);
-//     const NDescription = createCalendarDescription(pensum, speaker, kindOfWorkshop, platform, description, meetingLink, meetingId, meetingPasword);
-//     const [startDate, endDate] = getFormatedDate(date, startHour, endHour);
-//     const encodedLocation = encodeURIComponent(location);
-//     const encodeDescription = encodeURIComponent(NDescription);
-//     const calendarStartDate = startDate.replaceAll('-', '').replaceAll(':', '').replaceAll('.', '');
-//     const calendarEndDate = endDate.replaceAll('-', '').replaceAll(':', '').replaceAll('.', '');
-//     let addUrl = '';
-//     if (kindOfWorkshop === "Asincrono") {
-//         const startDay = startDate.replaceAll('-', '').replaceAll(':', '').replaceAll('.', '').slice(0, -11);
-//         const endDayISO = addDays(endDate, 3)
-//         const endDay = endDayISO.replaceAll('-', '').replaceAll(':', '').replaceAll('.', '').slice(0, -11)
-//         addUrl = `http://www.google.com/calendar/event?action=TEMPLATE&text=${calendarName}&dates=${startDay}/${endDay}&details=${encodeDescription}&location=${encodedLocation}`;
-//     }
-//     else {
-//         addUrl = `http://www.google.com/calendar/event?action=TEMPLATE&text=${calendarName}&dates=${calendarStartDate}/${calendarEndDate}&details=${encodeDescription}&location=${encodedLocation}`;
-//     }
-//     return await shortenLink(addUrl);
-// };
-
 
 
 
@@ -274,5 +211,3 @@ export const getCalendarEvents = async (calendarId: string = 'primary') => {
         }
     );
 }
-
-// export default getEvents;
