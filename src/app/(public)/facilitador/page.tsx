@@ -35,11 +35,9 @@ const page = () => {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
             <section className="w-full">
-                <div className='bg-white flex flex-col items-center md:items-start'>
-                    <div className="bg-gradient-to-br from-green-600  to-emerald-800  w-full p-28  rounded-lg shadow-2xl">
-                    </div>
-                    <div className='px-16'>
-                        <div className='flex items-center justify-center md:justify-start rounded-full bg-slate-500 w-32 h-32 -mt-16 shadow-2xl p-4 border-4 '>
+                <div className='bg-white flex items-center justify-start '>
+                    <div className="bg-gradient-to-br from-green-600  to-emerald-800 w-1/3 p-8 min-h-screen shadow-2xl flex flex-col justify-start items-center">
+                        <div className='flex items-center justify-center md:justify-start rounded-full bg-slate-500 w-32 h-32  shadow-2xl p-4 border-4 '>
                             <Image
                                 src="/avaa.png"
                                 alt="Vercel Logo"
@@ -49,58 +47,303 @@ const page = () => {
                                 className='rounded-full'
                             />
                         </div>
-                        <div className="flex flex-col justify-center items-center md:items-start">
-                            <h1 className='text-4xl text-black font-semibold'>
-                                Luis Lopez
-                            </h1>
-                            <p className='text-sm text-green-700 font-semibold'>
-                                Facilitador ProExcelencia
-                            </p>
-                            <div className='flex gap-2'>
-                                <span className='text-xs  text-green-600 font-semibold max-w-2xl border-r-2 border-green-500 pr-2'>
-                                    Sociedad Bastiat
-                                </span>
-                                <span className='text-xs  text-slate-600 max-w-2xl'>
-                                    Desde 2015
-                                </span>
+                        <div className="">
+                            <div className="flex flex-col justify-center items-center">
+                                <h1 className='text-3xl text-black font-semibold my-2'>
+                                    Luis Lopez
+                                </h1>
+                                <div className='flex gap-2'>
+                                    <span className='text-base  font-semibold max-w-2xl border-r-2 border-green-500 pr-2'>
+                                        Sociedad Bastiat
+                                    </span>
+                                    <span className='text-base max-w-2xl'>
+                                        Desde 2015
+                                    </span>
+                                </div>
                             </div>
                         </div>
+                        <div className="flex gap-4 justify-center items-center m-4 ">
+                            {CARD_CONTENT.map(({ icon, text, number, bg }) => {
+                                return (
+                                    <NormalCard key={text} stat={number} Icon={icon} text={text} bg={bg} />
+                                )
+                            })}
+                        </div>
                     </div>
-                    <div className="flex gap-4 justify-center items-center m-4 ">
-                        {CARD_CONTENT.map(({ icon, text, number, bg }) => {
-                            return (
-                                <NormalCard key={text} stat={number} Icon={icon} text={text} bg={bg} />
-                            )
-                        })}
+                    <div className="overflow-x-auto shadow-md sm:rounded-lg w-3/4">
+                        <div className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 w-full py-2 px-4'>
+                            talleres realizados
+                        </div>
+                        <div className="flex flex-col">
+                            <ul className='w-full '>
+                                <li className='py-2 px-4  w-full h-auto'>
+                                    <a href="/courses/wso2-fast-enterprise-application-development">
+                                        <div className="flex gap-8 justify-start items-center">
+                                            <div className="justify-center items-center">
+                                                <div className="text-xl text-black">Liderazgo Social</div>
+                                                <div className='flex gap-1 text-xs text-black'>
+                                                    <text className='font-semibold text-green-600'>
+                                                        Taller
+                                                    </text>
+                                                    <text>
+                                                        Virtual
+                                                    </text>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col justify-center items-center ">
+                                                <div className="text-black text-2xl">
+                                                    30
+                                                </div>
+                                                <div className='text-black'>Becarios</div>
+                                            </div>
+                                            <div className='flex gap-1 text-xs text-black flex-col'>
+                                                <text className='font-semibold text-green-600'>
+                                                    Taller asociado al
+                                                </text>
+                                                <text>
+                                                    Liderazgo
+                                                </text>
+                                            </div>
+                                            <div>
+                                                <div className=" flex gap-4 justify-start items-center w-full">
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='text-black'>Realizado el</div>
+                                                        <div className="text-black text-lg">
+                                                            14/02/2023
+                                                        </div>
+                                                    </div>
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='flex h-5'>
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                        </div>
+                                                        <div className='text-black'>Clasificación</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li className='py-2 px-4  w-full h-auto'>
+                                    <a href="/courses/wso2-fast-enterprise-application-development">
+                                        <div className="flex gap-8 justify-start items-center">
+                                            <div className="justify-center items-center">
+                                                <div className="text-xl text-black">Liderazgo Social</div>
+                                                <div className='flex gap-1 text-xs text-black'>
+                                                    <text className='font-semibold text-green-600'>
+                                                        Taller
+                                                    </text>
+                                                    <text>
+                                                        Virtual
+                                                    </text>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col justify-center items-center ">
+                                                <div className="text-black text-2xl">
+                                                    30
+                                                </div>
+                                                <div className='text-black'>Becarios</div>
+                                            </div>
+                                            <div className='flex gap-1 text-xs text-black flex-col'>
+                                                <text className='font-semibold text-green-600'>
+                                                    Taller asociado al
+                                                </text>
+                                                <text>
+                                                    Liderazgo
+                                                </text>
+                                            </div>
+                                            <div>
+                                                <div className=" flex gap-4 justify-start items-center w-full">
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='text-black'>Realizado el</div>
+                                                        <div className="text-black text-lg">
+                                                            14/02/2023
+                                                        </div>
+                                                    </div>
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='flex h-5'>
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                        </div>
+                                                        <div className='text-black'>Clasificación</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li className='py-2 px-4  w-full h-auto'>
+                                    <a href="/courses/wso2-fast-enterprise-application-development">
+                                        <div className="flex gap-8 justify-start items-center">
+                                            <div className="justify-center items-center">
+                                                <div className="text-xl text-black">Liderazgo Social</div>
+                                                <div className='flex gap-1 text-xs text-black'>
+                                                    <text className='font-semibold text-green-600'>
+                                                        Taller
+                                                    </text>
+                                                    <text>
+                                                        Virtual
+                                                    </text>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col justify-center items-center ">
+                                                <div className="text-black text-2xl">
+                                                    30
+                                                </div>
+                                                <div className='text-black'>Becarios</div>
+                                            </div>
+                                            <div className='flex gap-1 text-xs text-black flex-col'>
+                                                <text className='font-semibold text-green-600'>
+                                                    Taller asociado al
+                                                </text>
+                                                <text>
+                                                    Liderazgo
+                                                </text>
+                                            </div>
+                                            <div>
+                                                <div className=" flex gap-4 justify-start items-center w-full">
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='text-black'>Realizado el</div>
+                                                        <div className="text-black text-lg">
+                                                            14/02/2023
+                                                        </div>
+                                                    </div>
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='flex h-5'>
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                        </div>
+                                                        <div className='text-black'>Clasificación</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li className='py-2 px-4  w-full h-auto '>
+                                    <a href="/courses/wso2-fast-enterprise-application-development">
+                                        <div className="flex gap-8 justify-start items-center">
+                                            <div className="justify-center items-center">
+                                                <div className="text-xl text-black">Liderazgo Social</div>
+                                                <div className='flex gap-1 text-xs text-black'>
+                                                    <text className='font-semibold text-green-600'>
+                                                        Taller
+                                                    </text>
+                                                    <text>
+                                                        Virtual
+                                                    </text>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col justify-center items-center ">
+                                                <div className="text-black text-2xl">
+                                                    30
+                                                </div>
+                                                <div className='text-black'>Becarios</div>
+                                            </div>
+                                            <div className='flex gap-1 text-xs text-black flex-col'>
+                                                <text className='font-semibold text-green-600'>
+                                                    Taller asociado al
+                                                </text>
+                                                <text>
+                                                    Liderazgo
+                                                </text>
+                                            </div>
+                                            <div>
+                                                <div className=" flex gap-4 justify-start items-center w-full">
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='text-black'>Realizado el</div>
+                                                        <div className="text-black text-lg">
+                                                            14/02/2023
+                                                        </div>
+                                                    </div>
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='flex h-5'>
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                        </div>
+                                                        <div className='text-black'>Clasificación</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li className='py-2 px-4  w-full h-auto'>
+                                    <a href="/courses/wso2-fast-enterprise-application-development">
+                                        <div className="flex gap-8 justify-start items-center">
+                                            <div className="justify-center items-center">
+                                                <div className="text-xl text-black">Liderazgo Social</div>
+                                                <div className='flex gap-1 text-xs text-black'>
+                                                    <text className='font-semibold text-green-600'>
+                                                        Taller
+                                                    </text>
+                                                    <text>
+                                                        Virtual
+                                                    </text>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col justify-center items-center ">
+                                                <div className="text-black text-2xl">
+                                                    30
+                                                </div>
+                                                <div className='text-black'>Becarios</div>
+                                            </div>
+                                            <div className='flex gap-1 text-xs text-black flex-col'>
+                                                <text className='font-semibold text-green-600'>
+                                                    Taller asociado al
+                                                </text>
+                                                <text>
+                                                    Liderazgo
+                                                </text>
+                                            </div>
+                                            <div>
+                                                <div className=" flex gap-4 justify-start items-center w-full">
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='text-black'>Realizado el</div>
+                                                        <div className="text-black text-lg">
+                                                            14/02/2023
+                                                        </div>
+                                                    </div>
+                                                    <Point />
+                                                    <div className="flex flex-col justify-center items-center ">
+                                                        <div className='flex h-5'>
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                            <Star color='#017F00' />
+                                                        </div>
+                                                        <div className='text-black'>Clasificación</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                    <ul className='w-full flex justify-center '>
-                        <li className='bg-emerald-800 py-2 px-4 rounded-xl w-1/2'>
-                            <a href="/courses/wso2-fast-enterprise-application-development">
-                                <div className="flex flex-col  justify-start items-start">
-                                    <text className="text-sm font-semibold text-green-600">Taller</text>
-                                    <div className="">Liderazgo Social</div>
-                                    <div className=" flex gap-4 justify-start items-center w-full">
-                                        <div className='flex gap-4 justify-start'>
-                                            <text className='font-semibold text-green-600'>
-                                                Competencia
-                                            </text>
-                                            <text>
-                                                Liderazgo
-                                            </text>
-                                        </div>
-                                        <Point />
-                                        <div>14 de Febrero de 2023</div>
-                                        <Point />
-
-                                        <div className='flex h-5'>
-                                            <Star color='#017F00' /> <Star color='#017F00' /><Star color='#017F00' /><Star color='#017F00' />
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </section>
         </main >
