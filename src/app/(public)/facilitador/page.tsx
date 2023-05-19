@@ -138,7 +138,7 @@ const page = () => {
 
                 </div>
                 <div className="flex flex-col gap-4 min-h-screen justify-start items-start w-11/12 py-8 ">
-                    <div className="flex gap-2 justify-center items-center h-28">
+                    <div className="flex gap-2 justify-center items-center h-28 w-full ">
                         {CARD_CONTENT.map(({ icon, text, number, bg }) => {
                             return (
                                 <NormalCard key={text} stat={number} Icon={icon} text={text} bg={bg} />
