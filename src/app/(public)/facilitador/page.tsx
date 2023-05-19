@@ -146,7 +146,7 @@ const page = () => {
                         })}
                     </div>
                     <div className="overflow-x-clip rounded-lg w-full mb-8 mt-16 ">
-                        <table className="w-full text-sm text-left text-gray-500 bg-gradient-to-b from-emerald-950 to-slate-950">
+                        <table className="w-full text-sm text-left text-gray-300 bg-gradient-to-b from-emerald-950 to-slate-950">
                             <thead className="text-xs text-green-500 uppercase bg-transparent">
                                 <tr>
                                     <th scope="col" className="px-6 py-3">
