@@ -16,7 +16,7 @@ const NormalCard = ({ stat, text, bg, Icon }: CardProps) => {
                     <p className="leading-tight text-5xl font-bold">
                         {stat}
                     </p>
-                    <p className="leading-snug text-sm flex-grow">
+                    <p className="leading-snug text-base flex-grow font-semibold">
                         {text}
                     </p>
                 </div>
