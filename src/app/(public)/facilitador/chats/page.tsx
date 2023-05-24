@@ -32,6 +32,7 @@ const CARD_CONTENT = [
 
 const TEMPORAL_DATA = [
     {
+        id:1,
         chatName: "Two experience at the US",
         kindOfChat: "Virtual",
         chatDate: "14/04/2023",
@@ -39,6 +40,7 @@ const TEMPORAL_DATA = [
         scholars: 10,
     },
     {
+        id: 2,
         chatName: "Let's learn grammar thogether",
         kindOfChat: "Presencial",
         chatDate: "14/04/2023",
@@ -46,6 +48,7 @@ const TEMPORAL_DATA = [
         scholars: 15,
     },
     {
+        id: 3,
         chatName: "Let's learn grammar thogether",
         kindOfChat: "Presencial",
         chatDate: "14/04/2023",
@@ -53,6 +56,7 @@ const TEMPORAL_DATA = [
         scholars: 8,
     },
     {
+        id: 4,
         chatName: "The ABC",
         kindOfChat: "Presencial",
         chatDate: "14/04/2023",
@@ -60,6 +64,7 @@ const TEMPORAL_DATA = [
         scholars: 9,
     },
     {
+        id:5,
         chatName: "How to be a good leader",
         kindOfChat: "Presencial",
         chatDate: "14/04/2023",
@@ -72,10 +77,10 @@ const TEMPORAL_DATA = [
 const page = () => {
     return (
         <main >
-            <section className="bg-slate-950 flex flex-col lg:flex-row gap-4">
-                <div className="bg-gradient-to-b from-emerald-950 to-slate-950 w-full lg:w-1/4 lg:min-h-screen shadow-2xl flex flex-col lg:justify-start items-center gap-4 py-8 lg:px-4">
-                    <div className="flex lg:flex-col gap-4 justify-center items-center max-w-min ">
-                        <div className='flex items-center justify-center w-max rounded-full  shadow-2xl border-4 border-white p-1'>
+            <section className="bg-slate-950 flex flex-col lg:flex-row min-h-screen">
+                <div className="bg-gradient-to-b from-emerald-950 to-slate-950 w-full lg:w-1/4 lg:min-h-screen shadow-2xl flex flex-col lg:justify-start items-center gap-4  lg:px-4">
+                    <div className="flex flex-col gap-4 justify-center items-center mt-14 mb-8 sm:flex-row lg:flex-col md:max-w-min">
+                        <div className='w-52 flex items-center justify-center sm:w-max rounded-full  shadow-2xl border-4 border-white p-1'>
                             <Image
                                 src="https://media.licdn.com/dms/image/D4E03AQHmoaa1u1tn1g/profile-displayphoto-shrink_800_800/0/1681582874013?e=2147483647&v=beta&t=UoLUkXLZTauN5CsW8p-7ETy8WNSQwZiPOzp97WN66D0"
                                 alt="Imagen del facilitador"
@@ -85,14 +90,14 @@ const page = () => {
                                 className='rounded-full'
                             />
                         </div>
-                        <div className="flex flex-col justify-start items-start gap-1">
+                        <div className="flex flex-col justify-center items-center gap-2 sm:gap-1 sm:justify-start sm:items-start ">
                             <h1 className='text-3xl text-green-700 font-bold '>
                                 Atenea Giménez
                             </h1>
                             <p className=''>
                                 Facilitador Chats Clubs de Ingléss
                             </p>
-                            <div className="flex lg:hidden w-full justify-start gap-6  text-center opacity-50">
+                            <div className="flex  w-full gap-6 text-center opacity-50 justify-center sm:justify-start lg:hidden ">
                                 <a href="https://twitter.com/avaa_org" target="_blank" rel="noreferrer">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" className="inline-block h-5 hover:text-green-600 hover:opacity-100 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
                                 </a>
@@ -109,10 +114,28 @@ const page = () => {
                                     <svg viewBox="-5 0 20 20" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" className="inline-block h-5 hover:text-green-600 hover:opacity-100" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> </defs> <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#ffffff]"> </path> </g> </g> </g> </g></svg>
                                 </a>
                             </div>
-                            <div className="text-white flex lg:hidden italic ">
+                            <div className="text-white flex italic lg:hidden text-center sm:text-start px-4 sm:px-0">
                                 <span className='opacity-60 text-sm'>
                                     Atenea es estudiante de estudios internacionales en la Universidad Central de Venezuela (UCV)
                                 </span>
+                            </div>
+                        </div>
+                        <div className=" flex gap-2 items-center sm:w-56 sm:flex-col lg:hidden">
+                            <p className='text-lg font-bold'>
+                                Logros
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                <a href="/mustafinho?achievement=yolo&amp;tab=achievements" className="w-10 lg:w-16 ">
+                                    <img src="https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png" data-hovercard-type="achievement" data-hovercard-url="/users/mustafinho/achievements/yolo/detail?hovercard=1" alt="Achievement: YOLO" data-view-component="true" className="achievement-badge-sidebar" />
+                                </a>
+                                <a href="/mustafinho?achievement=pull-shark&amp;tab=achievements" className="w-10 lg:w-16 ">
+                                    <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" data-hovercard-type="achievement" data-hovercard-url="/users/mustafinho/achievements/pull-shark/detail?hovercard=1" alt="Achievement: Pull Shark" data-view-component="true" className="achievement-badge-sidebar" />
+                                </a>                                <a href="/mustafinho?achievement=pull-shark&amp;tab=achievements" className="w-10 lg:w-16 ">
+                                    <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" data-hovercard-type="achievement" data-hovercard-url="/users/mustafinho/achievements/pull-shark/detail?hovercard=1" alt="Achievement: Pull Shark" data-view-component="true" className="achievement-badge-sidebar" />
+                                </a>
+                                <a href="/mustafinho?achievement=pull-shark&amp;tab=achievements" className="w-10 lg:w-16 ">
+                                    <img src="https://i.imgur.com/avelT4I.png" data-hovercard-type="achievement" data-hovercard-url="/users/mustafinho/achievements/pull-shark/detail?hovercard=1" alt="Achievement: Pull Shark" data-view-component="true" className="achievement-badge-sidebar" />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -149,6 +172,9 @@ const page = () => {
                             <a href="/mustafinho?achievement=pull-shark&amp;tab=achievements" className="position-relative">
                                 <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" data-hovercard-type="achievement" data-hovercard-url="/users/mustafinho/achievements/pull-shark/detail?hovercard=1" width="64" alt="Achievement: Pull Shark" data-view-component="true" className="achievement-badge-sidebar" />
                             </a>
+                            <a href="/mustafinho?achievement=pull-shark&amp;tab=achievements" className="w-10 lg:w-20 ">
+                                <img src="https://i.imgur.com/avelT4I.png" data-hovercard-type="achievement" data-hovercard-url="/users/mustafinho/achievements/pull-shark/detail?hovercard=1" alt="Achievement: Pull Shark" data-view-component="true" className="achievement-badge-sidebar" />
+                            </a>
                         </div>
                     </div>
 
@@ -161,7 +187,7 @@ const page = () => {
                             )
                         })}
                     </div>
-                    <div className="overflow-x-clip rounded-lg w-[95%] mb-8 mt-16">
+                    <div className="overflow-x-scroll md:overflow-x-clip rounded-lg w-[95%] mb-8 mt-16 scroll ">
                         <table className="w-full text-sm text-left text-gray-300 bg-gradient-to-b from-emerald-950 to-slate-950">
                             <thead className="text-xs text-green-500 uppercase bg-transparent text-center border-b-2 border-green-600">
                                 <tr>
@@ -187,9 +213,9 @@ const page = () => {
                             </thead>
                             <tbody>
                                 {
-                                    TEMPORAL_DATA.map(({ chatName, level, chatDate, kindOfChat, scholars }) => {
+                                    TEMPORAL_DATA.map(({ chatName, level, chatDate, kindOfChat, scholars, id }) => {
                                         return (
-                                            <tr className="border-b bg-transparent border-gray-700 hover:bg-green-700 hover:text-white text-center">
+                                            <tr className="border-b bg-transparent border-gray-700 hover:bg-green-700 hover:text-white text-center" key={id}>
                                                 <th scope="row" className="px-6 py-4 font-medium  whitespace-nowrap text-white">
                                                     {chatName}
                                                 </th>
