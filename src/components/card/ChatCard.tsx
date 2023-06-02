@@ -12,6 +12,7 @@ interface ChatCardProps {
 }
 
 const ChatCard = ({ chatName, speaker, level, date, hour, inscriptionLink }: ChatCardProps) => {
+  const formatedDate = new Date(date)
   return (
     <div className='flex gap-4 bg-white p-4 rounded-md w-[420px] items-center justify-center overflow-hidden text-black '>
       <div className="flex flex-col gap-2 items-center">
@@ -36,10 +37,10 @@ const ChatCard = ({ chatName, speaker, level, date, hour, inscriptionLink }: Cha
         </span>
         <span className=' flex gap-1 font-bold'>
           <text className=''>
-            {date}
+            {formatedDate.toLocaleString('es-ES', { month: 'long' , day: 'numeric', year: 'numeric'})}
           </text>
           <text className=''>
-            {hour}
+            a las {hour}
           </text>
         </span>
         <div className='absolute -ml-40'>
