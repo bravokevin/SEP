@@ -13,6 +13,7 @@ interface ChatCardProps {
 
 const ChatCard = ({ chatName, speaker, level, date, hour, inscriptionLink }: ChatCardProps) => {
   const formatedDate = new Date(date)
+  console.log(inscriptionLink)
   return (
     <div className='flex gap-4 bg-white p-4 rounded-md w-[420px] items-center justify-center overflow-hidden text-black '>
       <div className="flex flex-col gap-2 items-center">
@@ -49,7 +50,7 @@ const ChatCard = ({ chatName, speaker, level, date, hour, inscriptionLink }: Cha
           </svg>
         </div>
         <div className='h-6'>
-          <Link href={inscriptionLink} role='button' type="button" className="absolute w-[420px] -ml-[210px]  text-white bg-purple-800  font-medium rounded-b-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Inscribirse</Link>
+          <a target='_blank' href={inscriptionLink} role='button' type="button" className="absolute w-[420px] -ml-[210px]  text-white bg-purple-800  font-medium rounded-b-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Inscribirse</a>
         </div>
       </div>
     </div>
