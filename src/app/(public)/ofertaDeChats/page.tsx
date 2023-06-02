@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import ChatCard from '@/components/card/ChatCard'
