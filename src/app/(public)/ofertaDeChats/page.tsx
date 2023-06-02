@@ -10,7 +10,9 @@ interface ChatQuery extends Chat {
 
 const page = () => {
   const searchParams = useSearchParams()
-  const chats  = searchParams.getAll('chats')
+  const chats = searchParams.getAll('chats')
+
+
   const chatsToRender = chats as unknown as ChatQuery[]
 
   return (
@@ -31,9 +33,10 @@ const page = () => {
           <div className="flex flex-col gap-4 justify-center items-center ">
             <h2 className='font-bold text-5xl mb-4 text-black bg-white w-full p-4 text-center rounded-md'>Chats Virtuales</h2>
             <div className="flex flex-wrap justify-center items-center gap-6">
-              {chatsToRender.map((chat, index: number) => {
-                if (chat.kindOfChat === 'presencial') {
-                  return <ChatCard key={index} chatName={chat.name} speaker={chat.speaker} level={chat.level} date={chat.date} hour={chat.startHour} inscriptionLink={chat.inscriptionLink} />
+              {chats.map((chat, index: number) => {
+                const { workshop, completeFormUrl } = chat;
+                if (workshop.kindOfChat === 'presencial') {
+                  return <ChatCard key={index} chatName={chat.name} speaker={chat.speaker} level={chat.level} date={chat.date} hour={chat.startHour} inscriptionLink={completeFormUrl} />
                 }
               })}
             </div>
@@ -41,9 +44,10 @@ const page = () => {
           <div className="flex flex-col gap-4 justify-center items-center ">
             <h2 className='font-bold text-5xl mb-4 text-black bg-white w-full p-4 text-center rounded-md'>Chats Presenciales</h2>
             <div className="flex flex-wrap justify-center items-center gap-6">
-              {chatsToRender.map((chat, index: number) => {
+              {chats.map((chat, index: number) => {
+                const { workshop, completeFormUrl } = chat;
                 if (chat.kindOfChat === 'presencial') {
-                  return <ChatCard key={index} chatName={chat.name} speaker={chat.speaker} level={chat.level} date={chat.date} hour={chat.startHour} inscriptionLink={chat.inscriptionLink} />
+                  return <ChatCard key={index} chatName={chat.name} speaker={chat.speaker} level={chat.level} date={chat.date} hour={chat.startHour} inscriptionLink={completeFormUrl} />
                 }
               })}
             </div>
