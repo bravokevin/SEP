@@ -11,7 +11,6 @@ interface ChatCardProps {
   inscriptionLink: string
 }
 
-
 const ChatCard = ({ chatName, speaker, level, date, hour, inscriptionLink }: ChatCardProps) => {
   return (
     <div className='flex gap-4 bg-white p-4 rounded-md w-[420px] items-center justify-center overflow-hidden text-black '>
