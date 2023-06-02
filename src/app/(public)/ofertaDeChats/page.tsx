@@ -1,6 +1,6 @@
-'use client'
+
 import React from 'react'
-import { useRouter } from 'next/router'
+import { useSearchParams } from 'next/navigation'
 import ChatCard from '@/components/card/ChatCard'
 import { Chat } from '@/types/Chat'
 
@@ -9,8 +9,8 @@ interface ChatQuery extends Chat {
 }
 
 const page = () => {
-  const router = useRouter()
-  const { chats } = router.query
+  const searchParams = useSearchParams()
+  const chats  = searchParams.getAll('chats')
   const chatsToRender = chats as unknown as ChatQuery[]
 
   return (
