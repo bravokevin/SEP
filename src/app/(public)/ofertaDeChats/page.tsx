@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { useRouter } from 'next/router'
-import ChatCard from '@/components/card/chatCard'
+import ChatCard from '@/components/card/ChatCard'
 import { Chat } from '@/types/Chat'
 
 interface ChatQuery extends Chat {
