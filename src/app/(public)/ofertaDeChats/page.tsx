@@ -18,7 +18,7 @@ const page = () => {
       <div className='w-full border-b-8 border-purple-800 '>
         <img src="https://i.imgur.com/oaJRKuz.png" alt="" className=' w-full h-[300px]' />
       </div>
-      <div className="bg-white w-10/12 m-auto p-4 rounded-md mt-4 text-black text-center">
+      <div className="bg-white w-[1400px] m-auto p-4 rounded-md mt-4 text-black text-center">
         <h2 className=' text-3xl font-bold'>
           Planed Schedule for the month
         </h2>
@@ -26,7 +26,7 @@ const page = () => {
           Click under the name to go to the Google Form to sign up!
         </text>
       </div>
-      <div className="container p-8 lg:space-y-0 lg:pt-12 min-h-screen ">
+      <div className="p-8 lg:space-y-0 lg:pt-12 min-h-screen ">
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-col gap-4 justify-center items-center">
             <h2 className='font-bold text-5xl mb-4 text-black bg-white w-[1400px] p-4 text-center rounded-md'>Chats Virtuales</h2>
