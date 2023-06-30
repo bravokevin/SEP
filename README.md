@@ -20,3 +20,10 @@
 Simplifica las tareas de seguimiento realizadas por el staff de ProExcelencia a los usuarios que participan dentro del programa. 
 
 ---
+---
+
+## 🤝 Contribuir
+
+[Directrices de contribución](./CONTRIBUCIONES.md)
+
+---
