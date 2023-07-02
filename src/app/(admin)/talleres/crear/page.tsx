@@ -184,8 +184,8 @@ const Page = () => {
                 <div className="relative p-4 w-full max-w-lg h-full md:h-auto">
                     <div className="relative p-4 bg-white rounded-lg shadow bg-slate-800 md:p-8">
                         {loading === "not" ?
-                            <div className="text-sm font-light text-gray-500 text-gray-400">
-                                <h3 className="mb-3 text-2xl font-bold text-gray-900 text-white">Coloca el Asusto y selecciona los contactos</h3>
+                            <div className="text-sm font-light  text-gray-400">
+                                <h3 className="mb-3 text-2xl font-bold text-gray-900 ">Coloca el Asusto y selecciona los contactos</h3>
                                 <form onSubmit={handleSubmit(sendWorkshops)}>
                                     <div className="flex flex-col">
                                         <label htmlFor="subject" className="mb-1 text-lg font-bold text-gray-700 text-gray-200">Asunto</label>
@@ -236,7 +236,7 @@ const Page = () => {
                                     </svg>
                                 </div>
                             </div> : <div className="flex flex-col justify-center items-center transition-all duration-500">
-                                <h3 className="mb-3 text-sm opacity-50 font-bold text-green-900 text-white">Talleres enviados de forma correcta</h3>
+                                <h3 className="mb-3 text-sm opacity-50 font-bold text-green-900 ">Talleres enviados de forma correcta</h3>
                                 <CheckIcon color='' />
                                 <button onClick={showModal} type="button" className="py-2 px-4 w-full text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 sm:w-auto hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 bg-gray-700 text-gray-300 border-gray-500 hover:text-white hover:bg-gray-600 focus:ring-gray-600">Cerrar</button>
                             </div>}

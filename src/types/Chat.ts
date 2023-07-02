@@ -1,12 +1,12 @@
 import shortUUID from "short-uuid";
+import { Platform } from "./General";
 
-export type KindOfChat = 'Presencial' | 'Virtual';
+export type KindOfChat = 'presencial' | 'virtual';
 
 export type ChatLevel = "Basico" | "Intermedio" | "Avanzado";
 
 export type ChatTurn = "A" | "B" | "C";
 
-export type Platform = 'Zoom' | 'Google Meet' | 'Otra' | 'Padlet' | 'Oficinas de AVAA' | 'Teams' | 'Discord' | 'Jitsi';
 
 export interface Chat {
     id: shortUUID.SUUID;

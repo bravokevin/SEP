@@ -1,9 +1,9 @@
 
 import shortUUID from "short-uuid";
+import { Platform } from "./General";
 
 export type Pensum = 'Liderazgo' | 'Ejercicio Ciudadano' | 'Gerencia de si mismo' | 'TICs' | 'Emprendimiento';
 export type KindOfWorkshop = 'Presencial' | 'Virtual' | 'Asincrono' | 'Hibrido';
-export type Platform = 'Zoom' | 'Google Meet' | 'Otra' | 'Padlet' | 'Oficinas de AVAA' | 'Teams' | 'Discord' | 'Jitsi';
 
 export type Workshop = {
     id: shortUUID.SUUID;
