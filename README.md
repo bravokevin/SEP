@@ -13,7 +13,7 @@
 
 ## 📍 Overview
 
-*SEP* Es el sistema de seguimiento y evaluación interna para todos los usuarios participantes del Programa Excelencia Academica (Proexcelencia) de AVAA.
+*SEP* Es el sistema de seguimiento y evaluación interna para todos los usuarios participantes del Programa Excelencia Academica (Proexcelencia) de AVAA..
 
 #### 🎯 *Motivation*
 
