@@ -17,7 +17,7 @@ const page = () => {
   return (
     <main className='bg-purple-300 flex flex-col'>
       <div className='w-full border-b-8 border-purple-800'>
-        <Image src="https://i.imgur.com/4uftDi7.jpg" alt="" width={1600} heigth={404}/>
+        <Image src="https://i.imgur.com/8YntKej.jpg" alt="" width={1600} heigth={404}/>
       </div>
       <div className="bg-white w-full m-auto p-4 rounded-md mt-4 text-black text-center">
         <h2 className=' text-2xl sm:text-3xl font-bold'>
